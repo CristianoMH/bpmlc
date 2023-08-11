@@ -2,6 +2,9 @@
 
 # Tất cả các khay trên hệ thống BPm
 ### -------------------------------------------------------------- ###
+#-- Khay ông Vận hành
+${tray_bpm_ops}    //a[@class='nav-link nav-dropdown-toggle' and not(contains(.,'BPM Vận hành (NEW)')) and contains(.,'Vận hành')]
+
 #-- Khay cha BPM vận hành (NEW)
 ${tray_bpm_ops_new}    //a[contains(.,'BPM Vận hành (NEW)')]    
 

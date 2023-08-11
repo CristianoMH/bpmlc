@@ -4,6 +4,7 @@
 #---- locators của các element trong tab Thông tin nhập liệu
 
 #--- Tab Thông tin nhập liệu
+${tab_input}    //button[contains(.,'Thông tin nhập liệu')]
 
 #-- Vùng Thông tin chung
 #- CIF
@@ -45,7 +46,7 @@ ${droplist_lcType}    //span[@class='ng-tns-c410-6 p-dropdown-label p-inputtext 
 #- Phương thức thanh toán
 ${droplist_paymentMethod}    //span[@class='ng-tns-c410-7 p-dropdown-label p-inputtext ng-star-inserted']
 #- Ngân hàng tài trợ
-${drolist_sponsorBank}    //span[@class='ng-tns-c196-8 p-dropdown-label p-inputtext p-placeholder ng-star-inserted']
+${droplist_sponsorBank}    //span[@class='ng-tns-c196-8 p-dropdown-label p-inputtext p-placeholder ng-star-inserted']
 #- Điều kiện giao hàng
 ${droplist_deliveryCondition}    //span[@class='ng-tns-c196-9 p-dropdown-label p-inputtext ng-star-inserted']
 #- Ngày hết hạn LC
@@ -60,6 +61,8 @@ ${tb_depositAmount}    //input[@name='importLCInfoDtoDepositAmount']
 ${tb_email}    //input[@id='check']
 
 #--- Tab Danh mục hồ sơ
+${tab_checklist}    //button[contains(.,'Danh mục hồ sơ')]
+
 #-- Nợ chứng từ
 #- Nợ chứng từ của Yêu cầu mở thư tín dụng
 ${dpicker_docDebt_1}    //tr[@class='_highlight ng-star-inserted'][1]//input[@name='effectiveDate']
