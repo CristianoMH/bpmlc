@@ -46,7 +46,7 @@ ${droplist_lcType}    //span[@class='ng-tns-c410-6 p-dropdown-label p-inputtext 
 #- Phương thức thanh toán
 ${droplist_paymentMethod}    //span[@class='ng-tns-c410-7 p-dropdown-label p-inputtext ng-star-inserted']
 #- Ngân hàng tài trợ
-${droplist_sponsorBank}    //span[@class='ng-tns-c196-8 p-dropdown-label p-inputtext p-placeholder ng-star-inserted']
+${droplist_sponsorBank}    //span[contains(.,'Chọn Ngân hàng tài trợ')]
 #- Điều kiện giao hàng
 ${droplist_deliveryCondition}    //span[@class='ng-tns-c196-9 p-dropdown-label p-inputtext ng-star-inserted']
 #- Ngày hết hạn LC

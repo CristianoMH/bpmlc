@@ -18,4 +18,5 @@ TC1 - Phát hành LC
     [Tags]    LC50    lc    nhapkhau       
     #-- Maker tạo yêu cầu
     Maker create request
-    
+    Maker input data
+    Maker upload file

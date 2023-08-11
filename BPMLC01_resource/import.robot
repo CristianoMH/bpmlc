@@ -10,13 +10,10 @@ Resource    ../BPMLC02_common/web_common.robot
 
 ###    ELEMENT    ###
 Resource    ../BPMLC03_element/element_login.robot
-Resource    ../BPMLC03_element/element_common.robot
 Resource    ../BPMLC03_element/element_tray.robot
-Resource    ../BPMLC03_element/element_checklist.robot
 Resource    ../BPMLC03_element/element_phathanh_detail.robot
 
 ###    DATA    ###
-Resource    ../BPMLC04_data/data_common.robot
 Resource    ../BPMLC04_data/data_login.robot
 Resource    ../BPMLC04_data/LC/LCNK/data_phathanh.robot
 
