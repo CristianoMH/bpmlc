@@ -33,4 +33,17 @@ Maker choose request: productType = 50
     [Common] - Click element    ${btn_dialog_create_2}
     sleep    1
 
+#-- Mở khay TFO chờ xử lý
+TFO pick up request
+    [Common] - Wait for element to appear on page    ${tray_tfo_choxuly}
+    [Common] - Click element    ${tray_tfo_choxuly}
+    sleep    3
+    [Common] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_50}
+    sleep    1
+    Press Keys    ${tb_quicksearch}    ENTER
+    sleep    1
+    Open context menu   ${col_bpmid}    
+    sleep    1
+    [Common] - Click element    ${btn_pickup}
+    sleep    5
 

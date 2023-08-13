@@ -7,6 +7,7 @@ Library           Collections
 
 ###    COMMON KEYWORDS    ###
 Resource    ../BPMLC02_common/web_common.robot
+Resource    ../BPMLC02_common/assert_common.robot
 
 ###    ELEMENT    ###
 Resource    ../BPMLC03_element/element_login.robot

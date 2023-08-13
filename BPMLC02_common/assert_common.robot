@@ -117,6 +117,30 @@ Resource    ../0_resources/imports.robot
     ${screenTextLength} =    get length    ${screenText}
     should be equal as integers     ${screenTextLength}         ${expectedMaxlength}
 
+[Common] - Verify value is displayed on item
+    [Documentation]    Verify text is display on item with arguments ${item_loc} and ${text}
+    ...    ${item_loc} is locator of item
+    ...    ${text} is expect text user verify
+    [Arguments]     ${item_loc}     ${text}
+    ${value}=    Get text    ${item_loc}
+    Should Be Equal As Strings    ${text}     ${value}
+
+[Common] - Verify element should contain text
+    [Documentation]    Verify element should contain text as required with arguments ${element_loc} and ${text}
+    ...    ${element_loc} is locator of element
+    ...    ${text} is expect text user to verify
+    [Arguments]    ${element_loc}    ${text}
+    wait until keyword succeeds    10s     1s    Element Should Contain    ${element_loc}    ${text}
+
+[Common] - Verify color of element
+    [Documentation]    Verify color text or backgroud color of element with arguments ${locator}, ${prop_val} and ${color_expect}
+    ...    ${locator} is locator of element
+    ...    ${prop_val} is CSS property of element
+    ...    ${color_expect} is expect color user verify
+    [Arguments]    ${locator}    ${prop_val}    ${color_expect}
+    ${element_color}=    [Common] - Get CSS Property Value    ${locator}        ${prop_val}
+    Should Be Equal    ${element_color}    ${color_expect}    Color is not as required
+
 [Common] - check page contains element text
     [Arguments]  ${element_text}
     wait until page contains    ${element_text}     30

@@ -11,6 +11,15 @@ ${tray_bpm_ops_new}    //a[contains(.,'BPM Vận hành (NEW)')]
 #-- Khay con Yêu cầu đang xử lý (Maker)
 ${tray_maker_dangxuly}    //a[@href='/v2/request-list/MAKER_DANG_XU_LY']
 
+#-- Khay con Yêu cầu đang xử lý (Maker)
+${tray_maker_dahoanthanh}    //a[@href='/v2/request-list/DA_HOAN_THANH']
+
+#-- Khay con Yêu cầu chờ xử lý (TFO)
+${tray_tfo_choxuly}    //a[@href='/v2/request-list/CCO1_CHO_XU_LY']
+
+#-- Khay con Yêu cầu đang xử lý (TFO)
+${tray_tfo_dangxuly}    //a[@href='/v2/request-list/CCO1_DANG_XU_LY']
+
 #-- button tạo yêu cầu tại màn hình lưới
 ${btn_create}    //button[contains(.,'Tạo yêu cầu')]
 
@@ -44,3 +53,18 @@ ${btn_search_1}    //button[contains(.,'Tìm kiếm')]
 
 ${radioBtn_cif}    //div[@class='p-radiobutton-box']
 
+
+
+#-- Datatable
+
+#- Textbox tìm kiếm nhanh
+${tb_quicksearch}    //input[@ng-reflect-text='Nhấn enter để search']
+
+#- Button Tiếp nhận yêu cầu
+${btn_pickup}    //span[contains(.,'Tiếp nhận yêu cầu')]
+
+#- ID BPM
+${col_bpmid}    //td[@class='ng-star-inserted'][1]
+
+#- Trạng thái
+${col_status}    //td//span[@class='badge-status-cho-phan-cong status-badge']

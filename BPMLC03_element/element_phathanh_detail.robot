@@ -5,6 +5,8 @@
 
 #--- Tab Thông tin nhập liệu
 ${tab_input}    //button[contains(.,'Thông tin nhập liệu')]
+#-- Breadcrumb
+${label_requestcode}    //li[@ng-reflect-ng-class='[object Object]'][3]    
 
 #-- Vùng Thông tin chung
 #- CIF
@@ -60,6 +62,11 @@ ${tb_depositAmount}    //input[@name='importLCInfoDtoDepositAmount']
 #- Địa chỉ email
 ${tb_email}    //input[@id='check']
 
+#-- Vùng Thông tin RMA
+#- Ngân hàng thụ hưởng
+${tb_swift}    //input[@name='lcRmaDtoSwiftCode']
+${button_check_rma}    //button[contains(.,'Kiểm tra')]
+
 #--- Tab Danh mục hồ sơ
 ${tab_checklist}    //button[contains(.,'Danh mục hồ sơ')]
 
@@ -87,6 +94,10 @@ ${icon_upload_4}    //tr[@class='ng-star-inserted'][1]//i[@class='icon-msb-uploa
 #- Upload file của Chứng từ khác
 ${icon_upload_5}    //tr[@class='ng-star-inserted'][2]//i[@class='icon-msb-upload-line2 __icon-action']
 
+#-- Pop-up
+#- Nội dung xác nhận
+${textarea_confirm}    //textarea[@placeholder]
+
 #--- Các button xử lý
 #-- Button Lịch sử yêu cầu
 ${btn_history}    //button[contains(.,'Lịch sử yêu cầu')]
@@ -102,3 +113,11 @@ ${btn_cancel}    //button[contains(.,'Hủy yêu cầu')]
 ${btn_draft}    //button[contains(.,'Lưu yêu cầu')]
 #-- Button Tiếp theo
 ${btn_next}    //button[contains(.,'Tiếp theo')]
+#-- Button Gửi yêu cầu
+${btn_send}    //button[contains(.,'Gửi yêu cầu')]
+#-- Button Gửi
+${btn_submit}    //button[@type = 'submit']
+#-- Button Phê duyệt
+${btn_approve}    //button[contains(.,'Phê duyệt')]
+#-- Button Đồng ý
+${btn_accept}    //button[contains(.,'Đồng ý')]

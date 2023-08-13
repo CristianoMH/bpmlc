@@ -5,6 +5,7 @@ Test Setup    Run keywords
 ...    Login with role Maker
 ...    Open tray Maker dang xu ly
 ...    Maker choose request: productType = 50
+Test Teardown    [Common] - Close Browser
 # Test Teardown    [Common] - Close Browser
 
 ### --- All test cases of header part
@@ -20,3 +21,9 @@ TC1 - Phát hành LC
     Maker create request
     Maker input data
     Maker upload file
+    Maker send request
+    TFO pick up request
+    TFO input data
+    TFO upload file
+    TFO send request
+    Maker verify data

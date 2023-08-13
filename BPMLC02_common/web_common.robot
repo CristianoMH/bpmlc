@@ -93,9 +93,6 @@ ${NUMBERS}      1234567890
     Create Webdriver  Safari  executable_path=/Applications/Safari Technology Preview.app/Contents/MacOS/safaridriver
     Go To   ${url}
 
-[Common] - Close Browser 
-     close browser
-
 [Common] - Select Iframe
     [Arguments]   ${element_loc}
     wait until keyword succeeds     5s    1s    Wait Until Element Is Visible    ${element_loc}    timeout=20s    error=Could not find ${element_loc} element.
@@ -106,6 +103,16 @@ ${NUMBERS}      1234567890
     wait until keyword succeeds     5s    1s    Wait Until Element Is Visible    ${element_loc}    timeout=20s    error=Could not find ${element_loc} element.
     click element    ${element_loc}
 
+[Common] - Press key into textbox
+    [Arguments]    ${textbox_loc}    ${text}
+    wait until keyword succeeds    10s     1s    Element Should Be Visible    ${textbox_loc}
+    Press keys    ${textbox_loc}    ${text}
+    [return]     ${text}    
+
+[Common] - Mouse over element
+    [Arguments]  ${element_loc}
+    wait until keyword succeeds     5s    1s    Wait Until Element Is Visible    ${element_loc}    timeout=20s    error=Could not find ${element_loc} element.
+    mouse over    ${element_loc}
 
 [Common] - Execute JavaScript Click On Element By Xpath
     [Documentation]    Execute JavaScript Click On Element By Xpath
@@ -335,3 +342,11 @@ ${NUMBERS}      1234567890
     ${page_title}=      Get Title
     log     ${page_title}
     [Return]            ${page_title}
+
+[Common] - Set test variable
+    [Arguments]    ${name}    ${value}
+    Set Test Variable    \${${name}}    ${value}
+
+[Common] - Set suite variable
+    [Arguments]    ${name}    ${value}
+    Set Suite Variable    \${${name}}    ${value}
