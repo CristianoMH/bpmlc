@@ -84,15 +84,15 @@ ${dpicker_docDebt_5}    //tr[@class='ng-star-inserted'][2]//input[@name='effecti
 
 #-- Upload file
 #- Upload file của Yêu cầu mở thư tín dụng
-${icon_upload_1}    //tr[@class='_highlight ng-star-inserted'][1]//i[@class='icon-msb-upload-line2 __icon-action']
+${icon_upload_1}    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a//input
 #- Upload file của Hợp đồng/invoice
-${icon_upload_2}    //tr[@class='_highlight ng-star-inserted'][2]//i[@class='icon-msb-upload-line2 __icon-action']
+${icon_upload_2}    //tr[./td[contains(text(),'Hợp đồng/invoice')]]//a//input
 #- Upload file của Mail xác nhận nguồn ngân hàng tài trợ
-${icon_upload_3}    //tr[@class='_highlight ng-star-inserted'][3]//i[@class='icon-msb-upload-line2 __icon-action']
+${icon_upload_3}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a//input
 #- Upload file của Mail xác nhận nguồn confirm
-${icon_upload_4}    //tr[@class='ng-star-inserted'][1]//i[@class='icon-msb-upload-line2 __icon-action']
+${icon_upload_4}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a//input
 #- Upload file của Chứng từ khác
-${icon_upload_5}    //tr[@class='ng-star-inserted'][2]//i[@class='icon-msb-upload-line2 __icon-action']
+${icon_upload_5}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
 
 #-- Pop-up
 #- Nội dung xác nhận

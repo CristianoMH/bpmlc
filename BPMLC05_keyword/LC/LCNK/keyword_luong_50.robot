@@ -17,7 +17,6 @@ Maker create request
     sleep    5
     ${requestCode}     get text    ${label_requestcode}
     [Common] - Set test variable    name=requestCode_pType_50    value=${requestCode}
-    log to console    ----------${requestCode_pType_50}
 
 #-- Maker nhập dữ liệu hợp lệ
 Maker input data
@@ -30,18 +29,21 @@ Maker input data
     sleep    1
     [Common] - Click element    //li[@aria-label='ADCB']
     sleep    1
+    [Common] - Click element    ${btn_draft}
+    sleep    3
     [Common] - Click element    ${btn_next}
-    sleep    1
+    sleep    2
 
 #-- Maker upload hồ sơ trong Danh mục hồ sơ
 Maker upload file
-    # log to console    ----------${CURDIR}${/}test01.docx
-    # Choose file    //tr[@class='_highlight ng-star-inserted'][1]//a[@ng-reflect-text]    ${CURDIR}${/}test01.docx
-    [Common] - Input text into textbox    ${dpicker_docDebt_1}    31/12/2023
+    Wait Until Element Is Visible    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a    20s
+    Choose file    ${icon_upload_1}   ${CURDIR}${/}file_test${/}test01.docx
     sleep    3
-    [Common] - Input text into textbox    ${dpicker_docDebt_2}    31/12/2023
+    Wait Until Element Is Visible    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a    20s
+    Choose file    ${icon_upload_2}   ${CURDIR}${/}file_test${/}test02.docx
     sleep    3
-    [Common] - Input text into textbox    ${dpicker_docDebt_2}    31/12/2023
+    Wait Until Element Is Visible    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a    20s
+    Choose file    ${icon_upload_3}   ${CURDIR}${/}file_test${/}test03.docx
     sleep    3
     
 #-- Maker gửi yêu cầu

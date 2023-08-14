@@ -5,7 +5,6 @@ Test Setup    Run keywords
 ...    Login with role Maker
 ...    Open tray Maker dang xu ly
 ...    Maker choose request: productType = 50
-Test Teardown    [Common] - Close Browser
 # Test Teardown    [Common] - Close Browser
 
 ### --- All test cases of header part
