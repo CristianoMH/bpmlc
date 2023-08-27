@@ -2,18 +2,13 @@
 
 Resource         ../../BPMLC01_resource/import.robot
 Test Setup    Run keywords
-...    Login with role Maker
+...    [login] - Login with role Maker
 ...    [tray] - Open tray Maker dang xu ly
 ...    [tray] - Maker choose request: productType = 50
 Test Teardown    [Common] - Close Browser
 
-### --- All test cases of header part
+### --- Tất cả các test case của luồng phát hành nháp lần đầu
 *** Test Cases ***
-
-###    ATM CARD    ###
-###    -----------------------------------------------------------------------    ###
-
-###    NAPAS    ###
 TC1 - Phát hành LC nhap lan dau thanh cong    
     [Tags]    LC50    lc    nhapkhau       
     #-- Maker tạo yêu cầu

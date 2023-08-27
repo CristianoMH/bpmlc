@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../../BPMLC01_resource/import.robot
+Resource    ../../../BPMLC01_resource/import.robot
 
 ### --- Toàn bộ keyword chuyển duyệt yêu cầu
 *** Keywords ***

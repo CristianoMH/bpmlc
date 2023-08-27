@@ -2,7 +2,7 @@
 
 Resource    ../BPMLC01_resource/import.robot
 
-#- Toàn bộ keywords đăng nhập hệ thống theo role
+#- Toàn bộ keywords đăng nhập hệ thống theo role và đăng xuất khỏi hệ thống
 *** Keywords ***
 #-- Mở trình duyệt chrome
 Open browser with chrome browser
@@ -16,7 +16,7 @@ Open browser with chrome browser
     # sleep    1
 
 #-- Đăng nhập với user có role Maker
-Login with role Maker
+[login] - Login with role Maker
     Open browser with chrome browser
     [Common] - Wait for element to appear on page    ${tb_login_username}
     [Common] - Click element    ${tb_login_username}    
@@ -31,7 +31,7 @@ Login with role Maker
     sleep    4     
 
 #-- Đăng nhập với user có role TFO
-Login with role TFO
+[login] - Login with role TFO
     Open browser with chrome browser
     [Common] - Wait for element to appear on page    ${tb_login_username}
     [Common] - Click element    ${tb_login__username}    
@@ -46,7 +46,7 @@ Login with role TFO
     sleep    4  
 
 #-- Đăng nhập với user có role TFS
-Login with role TFS
+[login] - Login with role TFS
     Open browser with chrome browser
     [Common] - Wait for element to appear on page    ${tb_login_username}
     [Common] - Click element    ${tb_login__username}    
@@ -61,7 +61,7 @@ Login with role TFS
     sleep    4  
 
 #-- Đăng nhập với user có role dpv
-Login with role DPV
+[login] - Login with role DPV
     Open browser with chrome browser
     [Common] - Wait for element to appear on page    ${tb_login_username}
     [Common] - Click element    ${tb_login_username}    

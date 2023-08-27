@@ -1,6 +1,5 @@
 *** Settings ***
-Resource    ../0_resources/imports.robot
-
+Resource    ../BPMLC01_resource/import.robot
 
 *** Keywords ***
 
