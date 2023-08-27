@@ -6,7 +6,7 @@ Resource    ../BPMLC01_resource/import.robot
 *** Keywords ***
 
 #-- Mở khay Maker đang xử lý
-Open tray Maker dang xu ly
+[tray] - Open tray Maker dang xu ly
     [Common] - Wait for element to appear on page    ${tray_bpm_ops}
     [Common] - Click element    ${tray_bpm_ops}
     sleep    1
@@ -16,7 +16,7 @@ Open tray Maker dang xu ly
     sleep    4
 
 #-- Maker chọn yêu cầu Phát hành LC nháp lần đầu
-Maker choose request: productType = 50
+[tray] - Maker choose request: productType = 50
     [Common] - Wait for element to appear on page    ${btn_create}
     [Common] - Click element    ${btn_create}    
     sleep    1
@@ -34,7 +34,7 @@ Maker choose request: productType = 50
     sleep    1
 
 #-- Mở khay TFO chờ xử lý
-TFO pick up request
+[tray] - TFO pick up request
     [Common] - Wait for element to appear on page    ${tray_tfo_choxuly}
     [Common] - Click element    ${tray_tfo_choxuly}
     sleep    3

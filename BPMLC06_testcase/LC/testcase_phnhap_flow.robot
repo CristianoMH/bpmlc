@@ -3,8 +3,8 @@
 Resource         ../../BPMLC01_resource/import.robot
 Test Setup    Run keywords
 ...    Login with role Maker
-...    Open tray Maker dang xu ly
-...    Maker choose request: productType = 50
+...    [tray] - Open tray Maker dang xu ly
+...    [tray] - Maker choose request: productType = 50
 Test Teardown    [Common] - Close Browser
 
 ### --- All test cases of header part
@@ -25,7 +25,7 @@ TC1 - Phát hành LC nhap lan dau thanh cong
     #-- Maker gửi yêu cầu
     [phnhap] - Maker send request
     #-- TFO pick hồ sơ về khay cá nhân
-    TFO pick up request
+    [tray] - TFO pick up request
     #-- TFO nhập dữ liệu hợp lệ
     [phnhap] - TFO input data
     #-- TFO upload hồ sơ trong Danh mục hồ sơ
