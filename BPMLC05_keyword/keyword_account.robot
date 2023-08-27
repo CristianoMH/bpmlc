@@ -4,6 +4,16 @@ Resource    ../BPMLC01_resource/import.robot
 
 #- Toàn bộ keywords đăng nhập hệ thống theo role
 *** Keywords ***
+#-- Mở trình duyệt chrome
+Open browser with chrome browser
+    [Common] - Open Chrome Browser with mode    ${url_sit} 
+    sleep    1
+    [Common] - Maximize browser size to fit screen
+    sleep    1
+    # Open Browser       ${url}    headlesschrome
+    # sleep    1
+    # [Common] - Maximize browser size to fit screen
+    # sleep    1
 
 #-- Đăng nhập với user có role Maker
 Login with role Maker
@@ -64,3 +74,7 @@ Login with role DPV
     sleep    1 
     [Common] - Click element    ${btn_login}
     sleep    4  
+
+#-- Đóng trình duyệt
+[Common] - Close Browser 
+    close browser

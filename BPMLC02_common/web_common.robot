@@ -196,7 +196,7 @@ ${NUMBERS}      1234567890
      [Arguments]  ${locator}      ${timeout}=30
      [Documentation]    Try to wait for element at ${locator} with the total timeout of ${timeout}
 #     ${previous_kw}=    Register Keyword To Run On Failure    Nothing
-     wait until keyword succeeds    ${timeout}s     1s       element should be visible       ${locator}
+     wait until keyword succeeds    ${timeout}s     15s       element should be visible       ${locator}
 #     Register Keyword To Run On Failure    ${previous_kw}
  
 [Common] - Wait for element not to appear on page

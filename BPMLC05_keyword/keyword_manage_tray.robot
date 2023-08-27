@@ -15,7 +15,7 @@ Open tray Maker dang xu ly
     [Common] - Click element    ${tray_maker_dangxuly}
     sleep    4
 
-#-- Maker chọn yêu cầu Phát hành LC nháp
+#-- Maker chọn yêu cầu Phát hành LC nháp lần đầu
 Maker choose request: productType = 50
     [Common] - Wait for element to appear on page    ${btn_create}
     [Common] - Click element    ${btn_create}    

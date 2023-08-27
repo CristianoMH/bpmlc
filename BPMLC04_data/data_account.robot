@@ -2,7 +2,9 @@
 ### -------------------------------------------------------------- ###
 #-- Thông tin môi trường SIT
 ${url_sit}        https://digilending-sit.msb.com.vn/v2
+#-- Thông tin môi trường UAT
 ${url_uat}        https://digilending-uat.msb.com.vn/v2
+#-- Trình duyệt
 ${browser}        chrome
 
 ###    Các tài khoản theo role của luồng Tài trợ thương mại    ###
