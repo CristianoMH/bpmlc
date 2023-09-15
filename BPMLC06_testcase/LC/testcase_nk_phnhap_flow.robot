@@ -5,7 +5,7 @@ Test Setup    Run keywords
 ...    [login] - Login with role Maker
 ...    [tray] - Open tray Maker dang xu ly
 ...    [tray] - Maker choose request: productType = 50
-Test Teardown    [Common] - Close Browser
+Test Teardown    [BPM] - Close Browser
 
 ### --- Tất cả các test case của luồng phát hành nháp lần đầu
 *** Test Cases ***

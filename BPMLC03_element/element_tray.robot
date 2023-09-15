@@ -27,7 +27,7 @@ ${btn_create}    //button[contains(.,'Tạo yêu cầu')]
 ${dialog_create}    //div[@role='dialog']
 
 #-- radioBtn Tài trợ thương mại
-${radioBtn_lc}    //p-radiobutton[@name='radioGroup']
+${radioBtn_lc}    //p-radiobutton[@ng-reflect-label='Tài Trợ Thương Mại']
 
 #-- button Tạo yêu cầu trong pop-up
 ${btn_dialog_create}    //div[@role='dialog']//button[contains(.,'Tạo yêu cầu')]
@@ -41,6 +41,9 @@ ${btn_dialog_phat_hanh}    //tr[@class='ng-star-inserted'][2]//i
 #-- radio button Luồng Phát hành LC nháp lần đầu
 ${radiobtn_dialog_50}    //tr[@class='ng-star-inserted'][3]//div[@class='p-radiobutton-box']
 
+#-- radio button Luồng Phát hành LC chính thức chưa phát hành nháp
+${radiobtn_dialog_0}    //tr[@class='ng-star-inserted'][7]//div[@class='p-radiobutton-box']
+
 #-- Nút tạo trong pop-up Tạo yêu cầu
 ${btn_dialog_create_2}    //div[@role='dialog']//button[contains(.,'Tạo')]
 
@@ -50,10 +53,11 @@ ${tb_cif}    //input[@name='cif']
 #-- btn Tìm kiếm trong pop-up Tìm kiếm thông tin khách hàng
 ${btn_search_1}    //button[contains(.,'Tìm kiếm')]
 
-
+#-- radio button thông tin chi tiết khách hàng
 ${radioBtn_cif}    //div[@class='p-radiobutton-box']
 
-
+#-- radio button hạn mức con 801 hợp lệ
+${radioBtn_cusLimit_801}    //td[contains(.,'00110/2022/0000986')]//ancestor::tr//div[@class='p-radiobutton-box']
 
 #-- Datatable
 

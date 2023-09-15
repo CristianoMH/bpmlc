@@ -5,20 +5,19 @@ Resource    ../../../BPMLC01_resource/import.robot
 ### --- Toàn bộ keyword khởi tạo yêu cầu
 *** Keywords ***
 
-#-- Maker tạo yêu cầu phát hành nháp lần đầu
-[phnhap] - Maker create request
+#-- Maker tạo yêu cầu phát hành chính thức chưa phát hành nháp
+[phct] - Maker create request
     [BPM] - Input text into textbox    ${tb_cif}    ${data_cif}
     sleep    1
     [BPM] - Click element    ${btn_search_1}
     sleep    1
-    [BPM] - Click element    ${radioBtn_cif}
+    [BPM] - Click element    ${radioBtn_cusLimit_801}
     sleep    1
     [BPM] - Click element    ${btn_dialog_create}
     sleep    5
 
-
-#-- Maker nhập dữ liệu hợp lệ yêu cầu phát hành nháp lần đầu
-[phnhap] - Maker input data
+#-- Maker nhập dữ liệu hợp lệ yêu cầu phát hành chính thức chưa phát hành nháp
+[phct] - Maker input data
     [BPM] - Wait for element to appear on page    ${btn_expand}
     [BPM] - Click element    ${btn_expand}
     sleep    3
@@ -28,9 +27,20 @@ Resource    ../../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    //li[@aria-label='ADCB']
     sleep    1
+    [BPM] - Click element    ${droplist_lcExpirationLocation}
+    sleep    1
+    [BPM] - Click element    //li[contains(.,'VIET NAM')]
+    sleep    1
+    [BPM] - Input text into textbox    ${dpicker_ExpirationDate}    01/01/2025
+    sleep    3
+    [BPM] - Click element    ${tb_debitAccount}
+    sleep    1
+    [BPM] - Click element    //p-dropdownitem[1]//li[@role='option']
+    sleep    1
     [BPM] - Click element    ${btn_draft}
     sleep    3
     [BPM] - Click element    ${btn_next}
     sleep    3
     ${requestCode}     get text    ${label_requestcode}
-    [BPM] - Set test variable    name=requestCode_pType_50    value=${requestCode}
+    [BPM] - Set test variable    name=requestCode_pType_0    value=${requestCode}
+    log to console     --------${requestCode_pType_0}

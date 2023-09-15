@@ -54,11 +54,13 @@ ${droplist_deliveryCondition}    //span[@class='ng-tns-c196-9 p-dropdown-label p
 #- Ngày hết hạn LC
 ${dpicker_ExpirationDate}    //input[@name='importLCInfoDtoLcExpirationDate']
 #- Nơi hết hạn LC
-${droplist_lcExpirationLocation}    //span[@class='ng-tns-c196-11 p-dropdown-label p-inputtext p-placeholder ng-star-inserted']
+${droplist_lcExpirationLocation}    //span[contains(.,'Nơi hết hạn LC')]
 #- Tỷ lệ ký quỹ
 ${tb_marginRate}    //input[@name='importLCInfoDtoMarginRate']
 #- Số tiền ký quỹ
 ${tb_depositAmount}    //input[@name='importLCInfoDtoDepositAmount']
+#- Số tài khoản ghi nợ
+${tb_debitAccount}    //span[contains(.,'Số tài khoản ghi nợ')]
 #- Địa chỉ email
 ${tb_email}    //input[@id='check']
 
@@ -83,16 +85,18 @@ ${dpicker_docDebt_4}    //tr[@class='ng-star-inserted'][1]//input[@name='effecti
 ${dpicker_docDebt_5}    //tr[@class='ng-star-inserted'][2]//input[@name='effectiveDate']
 
 #-- Upload file
-#- Upload file của Yêu cầu mở thư tín dụng
-${icon_upload_1}    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a//input
-#- Upload file của Hợp đồng/invoice
-${icon_upload_2}    //tr[./td[contains(text(),'Hợp đồng/invoice')]]//a//input
-#- Upload file của Mail xác nhận nguồn ngân hàng tài trợ
-${icon_upload_3}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a//input
-#- Upload file của Mail xác nhận nguồn confirm
-${icon_upload_4}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a//input
-#- Upload file của Chứng từ khác
-${icon_upload_5}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
+#- Thẻ input file của Yêu cầu mở thư tín dụng
+${input_upload_ycmttd}    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a//input
+#- Thẻ input file của Hợp đồng/invoice
+${input_upload_hdi}    //tr[./td[contains(text(),'Hợp đồng/invoice')]]//a//input
+#- Thẻ input file của Mail xác nhận nguồn ngân hàng tài trợ
+${input_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a//input
+#- Thẻ input file của Mail xác nhận nguồn confirm
+${input_upload_mxnnc}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a//input
+#- Thẻ input file của Chứng từ khác
+${input_upload_ctk}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
+#- Thẻ input file của Chứng từ khác
+${input_upload_6}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
 
 #-- Pop-up
 #- Nội dung xác nhận

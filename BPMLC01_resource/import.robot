@@ -29,6 +29,8 @@ Resource    ../BPMLC04_data/data_ntxk.robot
 ###    KEYWORD    ###
 Resource    ../BPMLC05_keyword/keyword_create_request/lc/keyword_create_nk_phnhap_flow.robot
 Resource    ../BPMLC05_keyword/keyword_submit_request/lc/keyword_submit_nk_phnhap_flow.robot
+Resource    ../BPMLC05_keyword/keyword_create_request/lc/keyword_create_nk_phct_flow.robot
+Resource    ../BPMLC05_keyword/keyword_submit_request/lc/keyword_submit_nk_phct_flow.robot
 Resource    ../BPMLC05_keyword/keyword_account.robot
 Resource    ../BPMLC05_keyword/keyword_manage_file.robot
 Resource    ../BPMLC05_keyword/keyword_read_jsonfile.robot
