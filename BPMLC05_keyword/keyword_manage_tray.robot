@@ -16,7 +16,7 @@ Resource    ../BPMLC01_resource/import.robot
     sleep    4
 
 #-- Maker chọn yêu cầu Phát hành LC nháp lần đầu
-[tray] - Maker choose request: productType = 50
+[tray][phnhap] - Maker choose request
     [BPM] - Wait for element to appear on page    ${btn_create}
     [BPM] - Click element    ${btn_create}    
     sleep    1
@@ -34,8 +34,8 @@ Resource    ../BPMLC01_resource/import.robot
     sleep    1
 
 #-- Maker chọn yêu cầu Phát hành chính thức chưa phát hành nháp
-[tray] - Maker choose request: productType = 0
-    [BPM] - Wait for element to appear on page    ${btn_create}
+[tray][phct] - Maker choose request
+    [BPM] - Wait for element to appear on page    ${btn_create}    20
     [BPM] - Click element    ${btn_create}    
     sleep    1
     [BPM] - Click element    ${radioBtn_lc}
@@ -51,8 +51,8 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Click element    ${btn_dialog_create_2}
     sleep    1
 
-#-- Mở khay TFO chờ xử lý
-[tray] - TFO pick up request
+#-- Mở khay TFO chờ xử lý và tìm kiếm hồ sơ phát hành nháp lần đầu
+[tray][phnhap] - TFO pick up request
     [BPM] - Wait for element to appear on page    ${tray_tfo_choxuly}
     [BPM] - Click element    ${tray_tfo_choxuly}
     sleep    3
@@ -65,3 +65,41 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Click element    ${btn_pickup}
     sleep    5
 
+#-- Mở khay TFO chờ xử lý và tìm kiếm hồ sơ phát hành chính thức chưa phát hành nháp
+[tray][phct] - TFO pick up request
+    [BPM] - Wait for element to appear on page    ${tray_bpm_ops}
+    [BPM] - Click element    ${tray_bpm_ops}
+    sleep    1
+    [BPM] - Click element    ${tray_bpm_ops_new}
+    sleep    1    
+    [BPM] - Wait for element to appear on page    ${tray_tfo_choxuly}
+    [BPM] - Click element    ${tray_tfo_choxuly}
+    sleep    3
+    [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_0}
+    sleep    2
+    Press Keys    ${tb_quicksearch}    ENTER
+    sleep    2
+    [BPM] - Wait for element to appear on page    ${col_bpmid}    10
+    Open context menu   ${col_bpmid}    
+    sleep    1
+    [BPM] - Click element    ${btn_pickup}
+    sleep    5
+
+#-- Mở khay TFS chờ xử lý và tìm kiếm hồ sơ phát hành chính thức chưa phát hành nháp
+[tray][phct] - TFS pick up request
+    [BPM] - Wait for element to appear on page    ${tray_bpm_ops}
+    [BPM] - Click element    ${tray_bpm_ops}
+    sleep    1
+    [BPM] - Click element    ${tray_bpm_ops_new}
+    sleep    1    
+    [BPM] - Wait for element to appear on page    ${tray_tfs_choxuly}
+    [BPM] - Click element    ${tray_tfs_choxuly}
+    sleep    3
+    [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_0}
+    sleep    1
+    Press Keys    ${tb_quicksearch}    ENTER
+    sleep    1
+    Open context menu   ${col_bpmid}    
+    sleep    1
+    [BPM] - Click element    ${btn_pickup}
+    sleep    5

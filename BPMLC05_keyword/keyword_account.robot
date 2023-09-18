@@ -32,7 +32,6 @@ Open browser with chrome browser
 
 #-- Đăng nhập với user có role TFO
 [login] - Login with role TFO
-    Open browser with chrome browser
     [BPM] - Wait for element to appear on page    ${tb_login_username}
     [BPM] - Click element    ${tb_login__username}    
     sleep    1
@@ -74,6 +73,16 @@ Open browser with chrome browser
     sleep    1 
     [BPM] - Click element    ${btn_login}
     sleep    4  
+
+#-- Đăng xuất khỏi hệ thống
+[logout] - Logout system
+    sleep    5
+    [BPM] - Wait for element to appear on page    ${li_link_avatar}   
+    [BPM] - Execute JavaScript Click On Element By Xpath    ${a_link_avatar}
+    sleep    2
+    [BPM] - Wait for element to appear on page    ${link_logout}
+    [BPM] - Click element    ${link_logout}
+    sleep    5
 
 #-- Đóng trình duyệt
 [BPM] - Close Browser 
