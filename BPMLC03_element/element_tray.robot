@@ -2,6 +2,13 @@
 
 # Tất cả các khay trên hệ thống BPm
 ### -------------------------------------------------------------- ###
+#-- Avatar
+${li_link_avatar}    //app-header[@ng-reflect-navbar-brand-router-link='/home']
+${a_link_avatar}    //a[@class='nav-link avatar-user']
+
+#-- Link Đăng xuất
+${link_logout}    //a[contains(.,'Đăng xuất')]
+
 #-- Khay ông Vận hành
 ${tray_bpm_ops}    //a[@class='nav-link nav-dropdown-toggle' and not(contains(.,'BPM Vận hành (NEW)')) and contains(.,'Vận hành')]
 
@@ -19,6 +26,12 @@ ${tray_tfo_choxuly}    //a[@href='/v2/request-list/CCO1_CHO_XU_LY']
 
 #-- Khay con Yêu cầu đang xử lý (TFO)
 ${tray_tfo_dangxuly}    //a[@href='/v2/request-list/CCO1_DANG_XU_LY']
+
+#-- Khay con Yêu cầu chờ xử lý (TFS)
+${tray_tfs_choxuly}    //a[@href='/v2/request-list/CCO2_CHO_XU_LY']
+
+#-- Khay con Yêu cầu đang xử lý (TFS)
+${tray_tfs_dangxuly}    //a[@href='/v2/request-list/CCO2_DANG_XU_LY']
 
 #-- button tạo yêu cầu tại màn hình lưới
 ${btn_create}    //button[contains(.,'Tạo yêu cầu')]

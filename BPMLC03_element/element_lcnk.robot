@@ -59,6 +59,8 @@ ${droplist_lcExpirationLocation}    //span[contains(.,'Nơi hết hạn LC')]
 ${tb_marginRate}    //input[@name='importLCInfoDtoMarginRate']
 #- Số tiền ký quỹ
 ${tb_depositAmount}    //input[@name='importLCInfoDtoDepositAmount']
+#- Hình thức ký quỹ
+${droplist_depositForm}    //p-dropdown[@name='importLCInfoDtoDepositForm']
 #- Số tài khoản ghi nợ
 ${tb_debitAccount}    //span[contains(.,'Số tài khoản ghi nợ')]
 #- Địa chỉ email
@@ -71,6 +73,9 @@ ${button_check_rma}    //button[contains(.,'Kiểm tra')]
 
 #--- Tab Danh mục hồ sơ
 ${tab_checklist}    //button[contains(.,'Danh mục hồ sơ')]
+
+#--- Tab Hồ sơ LC
+${tb_refLc}    //input[@name='lcGeneralInfoDtoRefNumber']
 
 #-- Nợ chứng từ
 #- Nợ chứng từ của Yêu cầu mở thư tín dụng
@@ -87,16 +92,32 @@ ${dpicker_docDebt_5}    //tr[@class='ng-star-inserted'][2]//input[@name='effecti
 #-- Upload file
 #- Thẻ input file của Yêu cầu mở thư tín dụng
 ${input_upload_ycmttd}    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a//input
+#- Thẻ a file của Yêu cầu mở thư tín dụng
+${a_upload_ycmttd}    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//a
 #- Thẻ input file của Hợp đồng/invoice
 ${input_upload_hdi}    //tr[./td[contains(text(),'Hợp đồng/invoice')]]//a//input
+#- Thẻ a file của Hợp đồng/invoice
+${a_upload_hdi}    //tr[./td[contains(text(),'Hợp đồng/invoice')]]//a
 #- Thẻ input file của Mail xác nhận nguồn ngân hàng tài trợ
 ${input_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a//input
+#- Thẻ a file của Mail xác nhận nguồn ngân hàng tài trợ
+${a_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a
 #- Thẻ input file của Mail xác nhận nguồn confirm
-${input_upload_mxnnc}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a//input
+${input_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a//input
+#- Thẻ a file của Mail xác nhận nguồn confirm
+${a_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a
 #- Thẻ input file của Chứng từ khác
 ${input_upload_ctk}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
-#- Thẻ input file của Chứng từ khác
-${input_upload_6}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
+#- Thẻ a file của Chứng từ khác
+${a_upload_ctk}    //tr[./td[contains(text(),'Chứng từ khác')]]//a
+#- Thẻ input file của Cam kết của bên yêu cầu mở thư tín dụng
+${input_upload_ckcbycmttd}    //tr[./td[contains(text(),'Cam kết của bên yêu cầu mở thư tín dụng')]]//a//input
+#- Thẻ a file của Cam kết của bên yêu cầu mở thư tín dụng
+${a_upload_ckcbycmttd}    //tr[./td[contains(text(),'Cam kết của bên yêu cầu mở thư tín dụng')]]//a
+#- Thẻ input file của Giấy chứng nhận bảo hiểm
+${input_upload_gcnbh}    //tr[./td[contains(text(),'Giấy chứng nhận bảo hiểm')]]//a//input
+#- Thẻ a file của Giấy chứng nhận bảo hiểm
+${a_upload_gcnbh}    //tr[./td[contains(text(),'Giấy chứng nhận bảo hiểm')]]//a
 
 #-- Pop-up
 #- Nội dung xác nhận

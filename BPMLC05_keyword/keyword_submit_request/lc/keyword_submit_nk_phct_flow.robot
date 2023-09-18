@@ -6,9 +6,10 @@ Resource    ../../../BPMLC01_resource/import.robot
 *** Keywords ***
 #-- Maker gửi yêu cầu phát hành chính thức chưa phát hành nháp
 [phct] - Maker send request
-    [BPM] - Wait for element to appear on page    ${btn_draft}    5
+    [BPM] - Wait for element to appear on page    ${btn_draft}    20
     [BPM] - Click element    ${btn_draft}
     sleep    3
+    [BPM] - Wait for element to appear on page    ${btn_send}    20
     [BPM] - Click element    ${btn_send}
     sleep    3
     # [BPM] - Input text into textbox    ${textarea_confirm}    Auto Testing

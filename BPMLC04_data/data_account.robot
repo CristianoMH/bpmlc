@@ -7,6 +7,7 @@ ${url_uat}        https://digilending-uat.msb.com.vn/v2
 #-- Trình duyệt
 ${browser}        chrome
 
+
 ###    Các tài khoản theo role của luồng Tài trợ thương mại    ###
 #-- username của Maker
 ${data_username_maker}    lc_test_maker
