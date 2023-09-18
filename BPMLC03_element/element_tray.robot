@@ -27,6 +27,9 @@ ${tray_tfo_choxuly}    //a[@href='/v2/request-list/CCO1_CHO_XU_LY']
 #-- Khay con Yêu cầu đang xử lý (TFO)
 ${tray_tfo_dangxuly}    //a[@href='/v2/request-list/CCO1_DANG_XU_LY']
 
+#-- Khay con Yêu cầu đã hoàn thành (TFO)
+${tray_tfo_dahoanthanh}    //a[@href='/v2/request-list/DA_HOAN_THANH_TFO']
+
 #-- Khay con Yêu cầu chờ xử lý (TFS)
 ${tray_tfs_choxuly}    //a[@href='/v2/request-list/CCO2_CHO_XU_LY']
 

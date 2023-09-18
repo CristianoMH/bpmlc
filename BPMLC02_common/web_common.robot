@@ -333,6 +333,16 @@ ${NUMBERS}      1234567890
 [Common] - scroll down on page
     Execute Javascript	window.scrollTo(0,document.body.scrollHeight);
 
+[Common] - Refresh Page Until Page Contains Element
+    [Documentation]    Refresh Page Until Page Contains Element
+	[Arguments]  ${element_xpath}
+    ${Reload}=  Run Keyword And Return Status  Page Should Contain Element    ${element_xpath}
+    WHILE    ${Reload} != ${TRUE}
+        sleep    4
+        RELOAD PAGE
+        ${Reload}=  Run Keyword And Return Status  Page Should Contain element    ${element_xpath}
+    END
+
 [Common] - Get page source
     ${myHtml} =    Get Source
     log     ${myHtml}

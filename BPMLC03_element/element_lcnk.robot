@@ -145,4 +145,6 @@ ${btn_submit}    //button[@type = 'submit']
 #-- Button Phê duyệt
 ${btn_approve}    //button[contains(.,'Phê duyệt')]
 #-- Button Đồng ý
-${btn_accept}    //button[contains(.,'Đồng ý')]
+${btn_agree}    //button[contains(.,'Đồng ý')]
+#-- Button Duyệt
+${btn_accept}    //button[contains(.,'Duyệt')]

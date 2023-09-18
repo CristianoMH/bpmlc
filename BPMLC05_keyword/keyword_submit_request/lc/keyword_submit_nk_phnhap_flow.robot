@@ -40,7 +40,7 @@ Resource    ../../../BPMLC01_resource/import.robot
 [phnhap] - TFO send request
     [BPM] - Click element    ${btn_approve}
     sleep    1
-    [BPM] - Click element    ${btn_accept}
+    [BPM] - Click element    ${btn_agree}
     sleep    5  
 
 #-- Maker xác nhận đóng yêu cầu phát hành nháp lần đầu thành công

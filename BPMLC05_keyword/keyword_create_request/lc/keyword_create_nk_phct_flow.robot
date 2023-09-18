@@ -7,6 +7,7 @@ Resource    ../../../BPMLC01_resource/import.robot
 
 #-- Maker tạo yêu cầu phát hành chính thức chưa phát hành nháp
 [phct] - Maker create request
+    [Common] - Refresh Page Until Page Contains Element    ${tb_cif}
     [BPM] - Wait for element to appear on page    ${tb_cif}    20
     [BPM] - Input text into textbox    ${tb_cif}    ${data_cif}
     sleep    1
@@ -19,10 +20,10 @@ Resource    ../../../BPMLC01_resource/import.robot
 
 #-- Maker nhập dữ liệu hợp lệ yêu cầu phát hành chính thức chưa phát hành nháp
 [phct] - Maker input data
-    [BPM] - Wait for element to appear on page    ${btn_expand}    5
+    [BPM] - Wait for element to appear on page    ${btn_expand}    20
     [BPM] - Click element    ${btn_expand}
     sleep    3
-    [BPM] - Input text into textbox    ${tb_lcValue}    1234.56
+    [BPM] - Input text into textbox    ${tb_lcValue}    1234.00
     sleep    3
     [BPM] - Click element    ${droplist_sponsorBank}
     sleep    1

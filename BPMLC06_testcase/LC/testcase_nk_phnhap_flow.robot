@@ -29,3 +29,4 @@ TC1 - Phát hành LC nhap lan dau thanh cong
     [phnhap] - TFO send request
     #-- Xác nhận trạng thái Đóng hồ sơ
     [phnhap] - Maker verify request
+    

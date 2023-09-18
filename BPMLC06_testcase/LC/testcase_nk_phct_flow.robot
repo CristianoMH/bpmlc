@@ -48,7 +48,9 @@ TC1 - Phát hành LC chính thức chưa phát hành nháp thành công
     [phct] - TFS send request
     #-- TFS đăng xuất khỏi hệ thống
     [logout] - Logout system
-    #-- Đăng nhập vào hệ thống với role Maker
-    [login] - Login with role Maker
-    #-- Maker xác nhận đóng yêu cầu phát hành chính thức chưa phát hành nháp
-    [phct] - Maker verify request
+    #-- Đăng nhập vào hệ thống với role TFO
+    [login] - Login with role TFO
+    #-- TFO đóng yêu cầu phát hành chính thức chưa phát hành nháp
+    [phct] - TFO close request
+    #-- TFO xác nhận đóng yêu cầu phát hành chính thức chưa phát hành nháp
+    [phct] - TFO verify request
