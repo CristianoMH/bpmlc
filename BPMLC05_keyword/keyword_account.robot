@@ -33,7 +33,7 @@ Open browser with chrome browser
 
 #-- Đăng nhập với user có role TFO
 [login] - Login with role TFO
-    [Common] - Refresh Page Until Page Contains Element    ${tb_login_username}
+    [BPM] - Refresh Page Until Page Contains Element    ${tb_login_username}
     [BPM] - Wait for element to appear on page    ${tb_login_username}
     [BPM] - Click element    ${tb_login__username}    
     sleep    1
@@ -48,7 +48,7 @@ Open browser with chrome browser
 
 #-- Đăng nhập với user có role TFS
 [login] - Login with role TFS
-    [Common] - Refresh Page Until Page Contains Element    ${tb_login_username}
+    [BPM] - Refresh Page Until Page Contains Element    ${tb_login_username}
     [BPM] - Wait for element to appear on page    ${tb_login_username}
     [BPM] - Click element    ${tb_login__username}    
     sleep    1
@@ -77,7 +77,7 @@ Open browser with chrome browser
 
 #-- Đăng xuất khỏi hệ thống
 [logout] - Logout system
-    [Common] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
     [BPM] - Wait for element to appear on page    ${li_link_avatar}    20  
     [BPM] - Execute JavaScript Click On Element By Xpath    ${a_link_avatar}
     sleep    2

@@ -17,7 +17,7 @@ Resource    ../BPMLC01_resource/import.robot
 
 #-- Maker chọn yêu cầu Phát hành LC nháp lần đầu
 [tray][phnhap] - Maker choose request
-    [Common] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
     [BPM] - Wait for element to appear on page    ${btn_create}    20
     [BPM] - Click element    ${btn_create}    
     sleep    1

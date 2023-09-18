@@ -270,6 +270,16 @@ ${NUMBERS}      1234567890
 	wait until page contains element     ${element_xpath}
 	Execute Javascript    document.evaluate("${element_xpath}", document, null, XPathResult.ANY_TYPE, null).iterateNext().scrollIntoView(${align_to});
 
+[BPM] - Refresh Page Until Page Contains Element
+    [Documentation]    Refresh Page Until Page Contains Element
+	[Arguments]  ${element_xpath}
+    ${Reload}=  Run Keyword And Return Status  Page Should Contain Element    ${element_xpath}
+    WHILE    ${Reload} != ${TRUE}
+        sleep    4
+        RELOAD PAGE
+        ${Reload}=  Run Keyword And Return Status  Page Should Contain element    ${element_xpath}
+    END
+
 [BPM] - Scroll right on page
     Execute Javascript	window.scrollTo(document.body.scrollWidth,document.body.scrollHeight);
 

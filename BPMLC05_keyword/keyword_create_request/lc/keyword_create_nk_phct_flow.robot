@@ -7,7 +7,7 @@ Resource    ../../../BPMLC01_resource/import.robot
 
 #-- Maker tạo yêu cầu phát hành chính thức chưa phát hành nháp
 [phct] - Maker create request
-    [Common] - Refresh Page Until Page Contains Element    ${tb_cif}
+    [BPM] - Refresh Page Until Page Contains Element    ${tb_cif}
     [BPM] - Wait for element to appear on page    ${tb_cif}    20
     [BPM] - Input text into textbox    ${tb_cif}    ${data_cif}
     sleep    1
