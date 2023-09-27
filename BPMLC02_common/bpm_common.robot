@@ -303,3 +303,7 @@ ${NUMBERS}      1234567890
 [BPM] - Set suite variable
     [Arguments]    ${name}    ${value}
     Set Suite Variable    \${${name}}    ${value}
+
+Fill text
+     [Arguments]   ${locator}   ${value}
+     run keyword and continue on failure  input text  ${locator}  ${value}

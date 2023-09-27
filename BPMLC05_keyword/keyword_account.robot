@@ -40,7 +40,7 @@ Open browser with chrome browser
     sleep    1
     [BPM] - Input text into textbox    ${tb_login_password}    ${data_password_tfo}
     [BPM] - Click element    ${btn_login}
-    sleep    1
+    sleep    1 
 
 #-- Đăng nhập với user có role TFS
 [login] - Login with role TFS

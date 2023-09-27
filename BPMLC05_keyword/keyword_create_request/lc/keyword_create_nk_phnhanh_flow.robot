@@ -26,32 +26,39 @@ Resource    ../../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${tb_currency}
     sleep    1
-    [BPM] - Click element    //li[@aria-label='VND']
+    [BPM] - Click element    ${data_currency_vnd}
     sleep    1
-    ${data_lcValue}    Generate random string    4    0123456789
+    [lcnk] - Genenate random data
+    sleep    1
     [BPM] - Input text into textbox    ${tb_lcValue}    ${data_lcValue}
+    sleep    1
+    [BPM] - Clear element text using backspace    ${tb_toTolerance}    
+    [BPM] - Input text into textbox    ${tb_toTolerance}    10
+    sleep    1
+    [BPM] - Clear element text using backspace    ${tb_fromTolerance}  
+    [BPM] - Input text into textbox    ${tb_fromTolerance}    10
     sleep    1
     [BPM] - Click element    ${droplist_sponsorBank}
     sleep    1
-    [BPM] - Click element    //li[@aria-label='ADCB']
+    [BPM] - Click element    ${data_sponsorBank_ADCB}
     sleep    1
-    [BPM] - Input text into textbox    ${dpicker_ExpirationDate}    01/01/2025
+    [BPM] - Input text into textbox    ${dpicker_ExpirationDate}    ${data_expirationDate}
     sleep    1
     [BPM] - Click element    ${droplist_lcExpirationLocation}
     sleep    1
-    [BPM] - Click element    //li[contains(.,'VIET NAM')]
+    [BPM] - Click element    ${data_lcExpirationLocation_vietnam}
     sleep    1
-    [BPM] - Input text into textbox    ${tb_marginRate}    10.00
+    [BPM] - Input text into textbox    ${tb_marginRate}    ${data_marginRate}
     sleep    1
     [BPM] - Click element    ${tb_depositAmount}
     sleep    1 
     [BPM] - Click element    ${droplist_depositForm}
     sleep    1
-    [BPM] - Click element    //span[contains(.,'Phong tỏa tài khoản thanh toán')]
+    [BPM] - Click element    ${data_depositForm_pttk}
     sleep    1
     [BPM] - Click element    ${tb_debitAccount}
     sleep    1
-    [BPM] - Click element    //p-dropdownitem[1]//li[@role='option']
+    [BPM] - Click element    ${data_debitAccount_no1}
     sleep    1
     [BPM] - Click element    ${btn_next}
     sleep    1

@@ -119,6 +119,7 @@ Resource    ../BPMLC01_resource/import.robot
 #-- Mở khay TFO chờ xử lý và tìm kiếm hồ sơ phát hành luồng nhanh chưa phát hành nháp
 [tray][phnhanh] - TFO pick up request
     [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    Wait Until Element Is Not Visible    ${div_alert}    60    
     [BPM] - Wait for element to appear on page    ${tray_bpm_ops}    20
     [BPM] - Click element    ${tray_bpm_ops}
     sleep    1
@@ -167,6 +168,7 @@ Resource    ../BPMLC01_resource/import.robot
 #-- Mở khay TFS chờ xử lý và tìm kiếm hồ sơ phát hành luồng nhanh chưa phát hành nháp
 [tray][phnhanh] - TFS pick up request
     [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    Wait Until Element Is Not Visible    ${div_alert}    60 
     [BPM] - Wait for element to appear on page    ${tray_bpm_ops}    20
     [BPM] - Click element    ${tray_bpm_ops}
     sleep    1

@@ -32,7 +32,7 @@ Resource    ../../../BPMLC01_resource/import.robot
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_expand}
     sleep    3
-    [BPM] - Input text into textbox    ${tb_swift}    ABBKVNVX
+    [BPM] - Input text into textbox    ${tb_swift}    ${data_rma_ABBKVNVX}
     sleep    3
     [BPM] - Click element   ${button_check_rma}    
     sleep    3
