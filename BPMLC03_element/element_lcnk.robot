@@ -39,6 +39,8 @@ ${tb_email}    //input[@name='customerDtoEmail']
 #-- Vùng Thông tin phát hành
 #- Giá trị lc
 ${tb_lcValue}    //input[@name='importLCInfoDtoLcValue']
+#- Đơn vị tiền tệ
+${tb_currency}    //p-dropdown[@name='importLCInfoDtoCurrency']//span[contains(.,'USD')]
 #- Dung sai trên
 ${tb_toTolerance}    //input[@name='importLCInfoDtoToTolerance']
 #- Dung sai dưới

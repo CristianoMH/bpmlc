@@ -6,6 +6,9 @@
 ${li_link_avatar}    //app-header[@ng-reflect-navbar-brand-router-link='/home']
 ${a_link_avatar}    //a[@class='nav-link avatar-user']
 
+#-- Alert thông báo
+${div_alert}    //div[@role='alert']
+
 #-- Link Đăng xuất
 ${link_logout}    //a[contains(.,'Đăng xuất')]
 
@@ -49,16 +52,22 @@ ${radioBtn_lc}    //p-radiobutton[@ng-reflect-label='Tài Trợ Thương Mại']
 ${btn_dialog_create}    //div[@role='dialog']//button[contains(.,'Tạo yêu cầu')]
 
 #-- Nghiệp vụ LC nhập khẩu
-${btn_dialog_lcnk}    //tr[@class='ng-star-inserted'][1]//i[@class='pi pi-fw pi-chevron-right']
+${btn_dialog_lcnk}    //span[contains(.,'LC Nhập khẩu')]//ancestor::tr//i
 
 #-- Nghiệp vụ Phát hành LC
-${btn_dialog_phat_hanh}    //tr[@class='ng-star-inserted'][2]//i
+${btn_dialog_phat_hanh}    //span[contains(.,'Phát hành LC') and not(contains(.,'Phát hành LC luồng nhanh'))]//ancestor::tr//i
 
 #-- radio button Luồng Phát hành LC nháp lần đầu
 ${radiobtn_dialog_50}    //tr[@class='ng-star-inserted'][3]//div[@class='p-radiobutton-box']
 
 #-- radio button Luồng Phát hành LC chính thức chưa phát hành nháp
 ${radiobtn_dialog_0}    //tr[@class='ng-star-inserted'][7]//div[@class='p-radiobutton-box']
+
+#-- Nghiệp vụ Phát hành LC - phát hành nhanh
+${btn_dialog_phat_hanh_nhanh}    //span[contains(.,'Phát hành LC luồng nhanh')]//ancestor::tr//i
+
+#-- radio button Luồng Phát hành LC luồng nhanh chưa phát hành nháp
+${radiobtn_dialog_53}    //label[contains(.,'Phát hành LC luồng nhanh chưa phát hành nháp')]//ancestor::p-radiobutton//div[@class='p-radiobutton-box']    
 
 #-- Nút tạo trong pop-up Tạo yêu cầu
 ${btn_dialog_create_2}    //div[@role='dialog']//button[contains(.,'Tạo')]

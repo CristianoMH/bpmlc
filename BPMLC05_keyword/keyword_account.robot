@@ -20,46 +20,37 @@ Open browser with chrome browser
     Open browser with chrome browser
     [Common] - Refresh Page Until Page Contains Element    ${tb_login_username}
     [BPM] - Wait for element to appear on page    ${tb_login_username}
-    [BPM] - Click element    ${tb_login_username}    
-    sleep    1
+    [BPM] - Click element    ${tb_login_username}  
     [BPM] - Input text into textbox    ${tb_login_username}    ${data_username_maker}
-    sleep    1    
-    [BPM] - Click element    ${tb_login_password}
     sleep    1
+    [BPM] - Click element    ${tb_login_password}
     [BPM] - Input text into textbox    ${tb_login_password}    ${data_password_maker}
-    sleep    1 
-    [BPM] - Click element    ${btn_login}
-    sleep    4     
+    sleep    1
+    [BPM] - Click element    ${btn_login} 
+    sleep    1
 
 #-- Đăng nhập với user có role TFO
 [login] - Login with role TFO
     [BPM] - Refresh Page Until Page Contains Element    ${tb_login_username}
     [BPM] - Wait for element to appear on page    ${tb_login_username}
-    [BPM] - Click element    ${tb_login__username}    
+    [BPM] - Click element    ${tb_login__username}
     sleep    1
     [BPM] - Input text into textbox    ${tb_login_username}    ${data_username_tfo}
-    sleep    1    
     [BPM] - Click element    ${tb_login_password}
     sleep    1
     [BPM] - Input text into textbox    ${tb_login_password}    ${data_password_tfo}
-    sleep    1 
     [BPM] - Click element    ${btn_login}
-    sleep    4  
+    sleep    1
 
 #-- Đăng nhập với user có role TFS
 [login] - Login with role TFS
     [BPM] - Refresh Page Until Page Contains Element    ${tb_login_username}
     [BPM] - Wait for element to appear on page    ${tb_login_username}
     [BPM] - Click element    ${tb_login__username}    
-    sleep    1
-    [BPM] - Input text into textbox    ${tb_login_username}    ${data_username_tfs}
-    sleep    1    
+    [BPM] - Input text into textbox    ${tb_login_username}    ${data_username_tfs}  
     [BPM] - Click element    ${tb_login_password}
-    sleep    1
-    [BPM] - Input text into textbox    ${tb_login_password}    ${data_password_tfs}
-    sleep    1 
+    [BPM] - Input text into textbox    ${tb_login_password}    ${data_password_tfs} 
     [BPM] - Click element    ${btn_login}
-    sleep    4  
 
 #-- Đăng nhập với user có role dpv
 [login] - Login with role DPV
@@ -77,10 +68,11 @@ Open browser with chrome browser
 
 #-- Đăng xuất khỏi hệ thống
 [logout] - Logout system
-    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Wait for element to appear on page    ${li_link_avatar}    20  
     [BPM] - Execute JavaScript Click On Element By Xpath    ${a_link_avatar}
     sleep    2
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Wait for element to appear on page    ${link_logout}
     [BPM] - Click element    ${link_logout}
     sleep    5
