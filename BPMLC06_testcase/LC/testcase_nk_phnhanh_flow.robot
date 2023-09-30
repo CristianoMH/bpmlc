@@ -8,7 +8,7 @@ Test Setup    Run keywords
 ...    [tray] - Open tray Maker dang xu ly
 #-- Maker chọn yêu cầu phát hành chính thức
 ...    [tray][phnhanh] - Maker choose request
-# Test Teardown    [BPM] - Close Browser
+Test Teardown    [BPM] - Close Browser
 
 ### --- Tất cả các test case của luồng phát hành luồng nhanh chưa phát hành nháp
 *** Test Cases ***
