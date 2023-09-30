@@ -18,6 +18,21 @@ Resource    ../BPMLC01_resource/import.robot
     [Arguments]  ${button}
     Page Should Not Contain Element     xpath=${button}
 
+[Assert] - Verify page should not contain button
+#    TODO will update to allow @{buttons} as web_locator arguments
+    [Arguments]  ${button}
+    Page Should Not Contain Element     xpath=${button}
+
+[Assert] - Verify page should not contain element
+#    TODO will update to allow @{buttons} as web_locator arguments
+    [Arguments]  ${locator}
+    Page Should Not Contain Element     xpath=${locator}
+
+[Assert] - Verify page should contain element
+#    TODO will update to allow @{buttons} as web_locator arguments
+    [Arguments]  ${locator}
+    Page Should Contain Element     xpath=${locator}
+
 [Assert] - verify confirmation message is
     [Arguments]  ${message}
     wait until page contains    ${message}

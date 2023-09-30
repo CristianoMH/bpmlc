@@ -33,3 +33,11 @@ ${data_depositForm_pttk}    //span[contains(.,'Phong tỏa tài khoản thanh to
 ${data_debitAccount_no1}    //p-dropdownitem[1]//li[@role='option']
 #-- Thông tin RMA
 ${data_rma_ABBKVNVX}    ABBKVNVX
+#-- Lý do gửi trả
+${data_reasonrollback_TTTTKTK}    //span[contains(.,'Thiếu tiền trong TKTT của KH')]
+#-- Nội dung gửi trả
+${data_contentrollback}    auto test
+#-- Người được gửi trả là maker
+${data_rollbackto_maker}    //li[@aria-label='Maker']
+#-- Người được gửi trả là tfo
+${data_rollbackto_tfo}    //li[@aria-label='TFO']

@@ -124,6 +124,14 @@ ${a_upload_gcnbh}    //tr[./td[contains(text(),'Giấy chứng nhận bảo hi�
 #-- Pop-up
 #- Nội dung xác nhận
 ${textarea_confirm}    //textarea[@placeholder]
+#- Lý do gửi trả
+${droplist_rollback_reason}    //p-multiselect//div[@ng-reflect-tooltip-position='right']
+#- Tắt lý do gửi trả
+${btn_close_popup_rollback}    //span[@class='p-multiselect-close-icon pi pi-times ng-tns-c439-28']
+#- Nội dung gửi trả
+${textarea_rollback_content}    //textarea[@placeholder='Nhập nội dung...']
+#- Người được gửi trả
+${droplist_rollbackto}    //p-dropdown[@optionvalue='id']//span[contains(.,'TFO')]
 
 #--- Các button xử lý
 #-- Button Lịch sử yêu cầu
@@ -150,3 +158,7 @@ ${btn_approve}    //button[contains(.,'Phê duyệt')]
 ${btn_agree}    //button[contains(.,'Đồng ý')]
 #-- Button Duyệt
 ${btn_accept}    //button[contains(.,'Duyệt')]
+#-- Button Phản hồi
+${btn_rollback}    //button[contains(.,'Phản hồi')]
+#-- Button phản hồi trong pop-up
+${btn_dialog_rollback}    //button[contains(.,'Phản hồi') and @type='submit']

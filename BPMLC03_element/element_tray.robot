@@ -9,6 +9,9 @@ ${a_link_avatar}    //a[@class='nav-link avatar-user']
 #-- Alert thông báo
 ${div_alert}    //div[@role='alert']
 
+#-- Mini sidebar
+${sidebar_minimizer}    //app-sidebar-minimizer
+
 #-- Link Đăng xuất
 ${link_logout}    //a[contains(.,'Đăng xuất')]
 
@@ -30,6 +33,9 @@ ${tray_tfo_choxuly}    //a[@href='/v2/request-list/CCO1_CHO_XU_LY']
 #-- Khay con Yêu cầu đang xử lý (TFO)
 ${tray_tfo_dangxuly}    //a[@href='/v2/request-list/CCO1_DANG_XU_LY']
 
+#-- Khay con Yêu cầu cần bổ sung (TFO)
+${tray_tfo_canbosung}    //a[@href='/v2/request-list/CCO1_CAN_BO_SUNG']
+
 #-- Khay con Yêu cầu đã hoàn thành (TFO)
 ${tray_tfo_dahoanthanh}    //a[@href='/v2/request-list/DA_HOAN_THANH_TFO']
 
@@ -38,6 +44,9 @@ ${tray_tfs_choxuly}    //a[@href='/v2/request-list/CCO2_CHO_XU_LY']
 
 #-- Khay con Yêu cầu đang xử lý (TFS)
 ${tray_tfs_dangxuly}    //a[@href='/v2/request-list/CCO2_DANG_XU_LY']
+
+#-- Khay con Yêu cầu cần bổ sung (TFS)
+${tray_tfs_canbosung}    //a[@href='/v2/request-list/CCO2_CAN_BO_SUNG']
 
 #-- button tạo yêu cầu tại màn hình lưới
 ${btn_create}    //button[contains(.,'Tạo yêu cầu')]
@@ -96,4 +105,10 @@ ${btn_pickup}    //span[contains(.,'Tiếp nhận yêu cầu')]
 ${col_bpmid}    //td[@class='ng-star-inserted'][1]
 
 #- Trạng thái
-${col_status}    //td//span[@class='badge-status-cho-phan-cong status-badge']
+${col_dahoanthanh_status}    //td//span[@class='badge-status-cho-phan-cong status-badge']
+
+${col_tfodangxuly_status}    //td//span[@class='badge-status-dang-xu-ly status-badge']
+
+${col_tfsdangxuly_status}    //td//span[@class='badge-status-dang-xu-ly status-badge']
+
+${col_makerdangxuly_status}    //td//span[@class='badge-status-luu-nhap status-badge']

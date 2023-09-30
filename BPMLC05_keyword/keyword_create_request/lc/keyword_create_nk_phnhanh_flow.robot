@@ -33,10 +33,10 @@ Resource    ../../../BPMLC01_resource/import.robot
     [BPM] - Input text into textbox    ${tb_lcValue}    ${data_lcValue}
     sleep    1
     [BPM] - Clear element text using backspace    ${tb_toTolerance}    
-    [BPM] - Input text into textbox    ${tb_toTolerance}    10
+    [BPM] - Input text into textbox    ${tb_toTolerance}    ${data_toTolerance}
     sleep    1
     [BPM] - Clear element text using backspace    ${tb_fromTolerance}  
-    [BPM] - Input text into textbox    ${tb_fromTolerance}    10
+    [BPM] - Input text into textbox    ${tb_fromTolerance}    ${data_fromTolerance}
     sleep    1
     [BPM] - Click element    ${droplist_sponsorBank}
     sleep    1
@@ -60,8 +60,9 @@ Resource    ../../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${data_debitAccount_no1}
     sleep    1
+    [BPM] - Wait for element not to appear on page    ${loading_fee}    120
     [BPM] - Click element    ${btn_next}
     sleep    1
     ${requestCode}     get text    ${label_requestcode}
-    [BPM] - Set test variable    name=requestCode_pType_0    value=${requestCode}
-    log to console     --------${requestCode_pType_0}
+    [BPM] - Set test variable    name=requestCode_pType_53    value=${requestCode}
+    log to console     --------${requestCode_pType_53}

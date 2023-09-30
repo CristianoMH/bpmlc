@@ -131,7 +131,7 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Click element    ${tray_tfo_choxuly}
     sleep    3
     [BPM] - Wait for element not to appear on page    ${loading_page}    60
-    [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_0}
+    [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_53}
     sleep    2
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    5
@@ -180,7 +180,7 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Click element    ${tray_tfs_choxuly}
     sleep    3
     [BPM] - Wait for element not to appear on page    ${loading_page}    60
-    [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_0}
+    [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_53}
     sleep    1
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    1
