@@ -9,7 +9,7 @@ ${NUMBERS}      1234567890
 *** Keywords ***
 [BPM] - Maximize browser size to fit screen
     Set window position    0    0
-    Set window size        1920    1080
+    Set window size        1366    768
 
 [BPM] - Resize windows to ignore responsive display
     Set Window Size    1440    900
