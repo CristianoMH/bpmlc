@@ -46,7 +46,7 @@ Resource    ../../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${droplist_lcExpirationLocation}
     sleep    1
-    [BPM] - Click element    ${data_lcExpirationLocation_vietnam}
+    [BPM] - Click element    ${data_lcExpirationLocation_argentina}
     sleep    1
     [BPM] - Input text into textbox    ${tb_marginRate}    ${data_marginRate}
     sleep    1

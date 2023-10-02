@@ -208,7 +208,6 @@ TC7 - Phát hành thành công - TFO lưu nháp
 
 TC8 - Phát hành thành công - TFS lưu nháp
     [Tags]    lc    nhapkhau    luong53    draft
-        [Tags]    lc    nhapkhau    luong53    close       
     #-- Maker tạo yêu cầu
     [phnhanh] - Maker create request
     #-- Maker nhập dữ liệu hợp lệ

@@ -26,7 +26,7 @@ ${data_sponsorBank_ADCB}    //li[@aria-label='ADCB']
 #-- Ngày hết hạn LC
 ${data_expirationDate}    01/01/2025
 #-- Nơi hết hạn LC
-${data_lcExpirationLocation_vietnam}    //li[contains(.,'VIET NAM')]    
+${data_lcExpirationLocation_argentina}    //li[contains(.,'ARGENTINA')]
 #-- Hình thức kí quỹ
 ${data_depositForm_pttk}    //span[contains(.,'Phong tỏa tài khoản thanh toán')]            
 #-- Tài khoản ghi nợ
