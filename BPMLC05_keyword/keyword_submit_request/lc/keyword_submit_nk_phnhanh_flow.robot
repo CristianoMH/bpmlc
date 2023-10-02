@@ -151,6 +151,7 @@ Resource    ../../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${btn_next}
     sleep    1
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_approve}
     sleep    1
     [BPM] - Click element    ${btn_agree}

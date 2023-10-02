@@ -159,7 +159,9 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_0}
     sleep    1
     Press Keys    ${tb_quicksearch}    ENTER
-    sleep    1
+    sleep    5
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Wait for element to appear on page    ${col_bpmid}    20
     Open context menu   ${col_bpmid}    
     sleep    1
     [BPM] - Click element    ${btn_pickup}
@@ -183,7 +185,9 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Input text into textbox    ${tb_quicksearch}    ${requestCode_pType_53}
     sleep    1
     Press Keys    ${tb_quicksearch}    ENTER
-    sleep    1
+    sleep    5
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Wait for element to appear on page    ${col_bpmid}    20
     Open context menu   ${col_bpmid}    
     sleep    1
     [BPM] - Click element    ${btn_pickup}
