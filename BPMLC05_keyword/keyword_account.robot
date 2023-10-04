@@ -8,7 +8,8 @@ Resource    ../BPMLC01_resource/import.robot
 Open browser with chrome browser
     [BPM] - Open Chrome Browser with mode    ${url_sit} 
     sleep    1
-    [BPM] - Maximize browser size to fit screen
+    # [BPM] - Maximize browser size to fit screen
+    Maximize Browser Window
     sleep    1
     # Open Browser       ${url}    headlesschrome
     # sleep    1
