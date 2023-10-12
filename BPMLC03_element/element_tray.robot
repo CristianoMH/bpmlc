@@ -90,8 +90,8 @@ ${btn_search_1}    //button[contains(.,'Tìm kiếm')]
 #-- radio button thông tin chi tiết khách hàng
 ${radioBtn_cif}    //div[@class='p-radiobutton-box']
 
-#-- radio button hạn mức con 801 hợp lệ
-${radioBtn_cusLimit_801}    //td[contains(.,'00033/2017/0000607')]//ancestor::tr//div[@class='p-radiobutton-box']
+#-- radio button hạn mức con 801 đầu tiên
+${radioBtn_first_cusLimit_801}    //tr[contains(.,'801')][1]//div[@class='p-radiobutton-box']
 
 #-- Datatable
 

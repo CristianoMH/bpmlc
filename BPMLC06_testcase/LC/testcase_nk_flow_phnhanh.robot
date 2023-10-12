@@ -1,97 +1,96 @@
 *** Settings ***
 
 Resource         ../../BPMLC01_resource/import.robot
-Test Setup    Run keywords
-#-- Đăng nhập vào hệ thống với role Maker
-...    [login] - Login with role Maker
-#-- Maker mở khay Đang xử lý
-...    [tray] - Open tray Maker dang xu ly
-#-- Maker chọn yêu cầu phát hành chính thức
-...    [tray][phnhanh] - Maker choose request
+
+#-- Mở trình duyệt chrome và đăng nhập vào hệ thống BPM với role Maker
+Test Setup    [BPM] - Open browser and login to system with role Maker
 # Test Teardown    [BPM] - Close Browser
 
 ### --- Tất cả các test case của luồng phát hành luồng nhanh chưa phát hành nháp
 *** Test Cases ***
-TC1 - Phát hành thành công - TFO đóng yêu cầu
+TC1 - Phát hành luồng nhanh chưa ph nháp - Flow chính
     [Tags]    lc    nhapkhau    luong53    close       
-    #-- Maker tạo yêu cầu
-    [phnhanh] - Maker create request
-    #-- Maker nhập dữ liệu hợp lệ
-    [phnhanh] - Maker input data
-    #-- Maker upload hồ sơ trong Danh mục hồ sơ
-    [phnhanh] - Maker upload file
+    #-- Maker chọn yêu cầu để khởi tạo
+    [BPM] - Choose request type to create    ${btn_dialog_lcnk}    ${btn_dialog_phat_hanh}    ${btn_dialog_phat_hanh_nhanh}    ${radiobtn_dialog_53}
+    #-- Maker tìm kiếm yêu cầu theo hạn mức
+    [BPM] - Search customer limit following cif code    ${data_cif}    ${radioBtn_first_cusLimit_801}
+    #-- Maker khởi tạo yêu cầu
+    [BPM] - Create new request
+    #-- Maker nhập toàn bộ dữ liệu tại các màn hình
+    [phnhanh][Maker] - Input data
     #-- Maker gửi yêu cầu
-    [phnhanh] - Maker send request
+    [BPM][Maker] - Send request
     #-- Maker đăng xuất khỏi hệ thống
-    [logout] - Logout system
+    [BPM] - Logout system
     #-- Đăng nhập vào hệ thống với role TFO
-    [login] - Login with role TFO
+    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
     #-- Mở khay TFO chờ xử lý và tìm kiếm hồ sơ
-    [tray][phnhanh] - TFO pick up request
-    #-- TFO nhập dữ liệu hợp lệ
-    [phnhanh] - TFO input data
-    #-- TFO upload hồ sơ trong Danh mục hồ sơ
-    [phnhanh] - TFO upload file
+    [BPM] - Pick up request    ${tray_tfo_choxuly}    ${requestCode_pType_53}    
+    #-- TFO nhập toàn bộ dữ liệu tại các màn hình
+    [phnhanh][TFO] - Input data
     #-- TFO gửi yêu cầu
-    [phnhanh] - TFO send request
+    [BPM][TFO/TFS] - Send request
     #-- TFO đăng xuất khỏi hệ thống
-    [logout] - Logout system
+    [BPM] - Logout system
     #-- Đăng nhập vào hệ thống với role TFS
-    [login] - Login with role TFS
+    [BPM] - Login into system        ${data_username_tfs}    ${data_password_tfs}
     #-- Mở khay TFS chờ xử lý và tìm kiếm hồ sơ
-    [tray][phnhanh] - TFS pick up request
-    #-- TFS nhập dữ liệu hợp lệ
-    [phnhanh] - TFS input data
-    #-- TFS upload hồ sơ trong Danh mục hồ sơ
-    [phnhanh] - TFS upload file
+    [BPM] - Pick up request    ${tray_tfs_choxuly}    ${requestCode_pType_53}
+    #-- TFS nhập toàn bộ dữ liệu tại các màn hình
+    [phnhanh][TFS] - Input data
     #-- TFS gửi yêu cầu
-    [phnhanh] - TFS send request
+    [BPM][TFO/TFS] - Send request
     #-- TFS đăng xuất khỏi hệ thống
-    [logout] - Logout system
+    [BPM] - Logout system
     #-- Đăng nhập vào hệ thống với role TFO
-    [login] - Login with role TFO
+    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
     #-- TFO đóng yêu cầu
-    [phnhanh] - TFO close request
+    [BPM][TFO] - Close request
     #-- TFO xác nhận đóng yêu cầu
-    [phnhanh] - TFO verify close request
+    [BPM] - Verify close request    ${tray_tfo_dahoanthanh}        ${requestCode_pType_53}    Đóng
 
 TC2 - Phát hành thành công - Maker hủy yêu cầu
     [Tags]    lc    nhapkhau    luong53    cancel       
-    #-- Maker tạo yêu cầu
-    [phnhanh] - Maker create request
-    #-- Maker nhập dữ liệu hợp lệ
-    [phnhanh] - Maker input data
-    #-- Maker upload hồ sơ trong Danh mục hồ sơ
-    [phnhanh] - Maker upload file
+    #-- Maker chọn yêu cầu để khởi tạo
+    [BPM] - Choose request type to create    ${btn_dialog_lcnk}    ${btn_dialog_phat_hanh}    ${btn_dialog_phat_hanh_nhanh}    ${radiobtn_dialog_53}
+    #-- Maker tìm kiếm yêu cầu theo hạn mức
+    [BPM] - Search customer limit following cif code    ${data_cif}    ${radioBtn_first_cusLimit_801}
+    #-- Maker khởi tạo yêu cầu
+    [BPM] - Create new request
+    #-- Maker nhập toàn bộ dữ liệu tại các màn hình
+    [phnhanh][Maker] - Input data
     #-- Maker hủy yêu cầu
-    [phnhanh] - Maker cancel request
+    [BPM] - Cancel request
     #-- Maker xác nhận hủy yêu cầu
-    [phnhanh] - Maker verify cancel request
+    [BPM] - Verify cancel request    ${tray_maker_dangxuly}    ${requestCode_pType_53}    //tr[@ng-reflect-data='[object Object]']            
 
 TC3 - Phát hành thành công - TFO gửi trả cho Maker
     [Tags]    lc    nhapkhau    luong53    rollback
-    #-- Maker tạo yêu cầu
-    [phnhanh] - Maker create request
-    #-- Maker nhập dữ liệu hợp lệ
-    [phnhanh] - Maker input data
-    #-- Maker upload hồ sơ trong Danh mục hồ sơ
-    [phnhanh] - Maker upload file
+   #-- Maker chọn yêu cầu để khởi tạo
+    [BPM] - Choose request type to create    ${btn_dialog_lcnk}    ${btn_dialog_phat_hanh}    ${btn_dialog_phat_hanh_nhanh}    ${radiobtn_dialog_53}
+    #-- Maker tìm kiếm yêu cầu theo hạn mức
+    [BPM] - Search customer limit following cif code    ${data_cif}    ${radioBtn_first_cusLimit_801}
+    #-- Maker khởi tạo yêu cầu
+    [BPM] - Create new request
+    #-- Maker nhập toàn bộ dữ liệu tại các màn hình
+    [phnhanh][Maker] - Input data
     #-- Maker gửi yêu cầu
-    [phnhanh] - Maker send request
+    [BPM][Maker] - Send request
     #-- Maker đăng xuất khỏi hệ thống
-    [logout] - Logout system
+    [BPM] - Logout system
     #-- Đăng nhập vào hệ thống với role TFO
-    [login] - Login with role TFO
+    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
     #-- Mở khay TFO chờ xử lý và tìm kiếm hồ sơ
-    [tray][phnhanh] - TFO pick up request
-    #-- TFO nhập dữ liệu hợp lệ
-    [phnhanh] - TFO input data
-    #-- TFO upload hồ sơ trong Danh mục hồ sơ
-    [phnhanh] - TFO upload file
+    [BPM] - Pick up request    ${tray_tfo_choxuly}    ${requestCode_pType_53}    
+    #-- TFO nhập toàn bộ dữ liệu tại các màn hình
+    [phnhanh][TFO] - Input data
     #-- TFO gửi trả yêu cầu cho Maker
-    [phnhanh] - TFO rollback request to maker
-    #-- TFO xác nhận trả yêu cầu phát hành luồng nhanh chưa phát hành nháp về cho maker
-    [phnhanh] - TFO verify rollback request
+    [BPM] - TFO rollback request to Maker
+    #-- TFO đăng xuất khỏi hệ thống
+    [BPM] - Logout system
+    #-- Đăng nhập vào hệ thống với role Maker
+    [BPM] - Login into system    ${data_username_maker}    ${data_password_maker}
+    
 
 TC4 - Phát hành thành công - TFS gửi trả cho Maker
     [Tags]    lc    nhapkhau    luong53    rollback 
@@ -132,7 +131,6 @@ TC4 - Phát hành thành công - TFS gửi trả cho Maker
 
 TC5 - Phát hành thành công - TFS gửi trả cho TFO
     [Tags]    lc    nhapkhau    luong53    rollback
-        [Tags]    lc    nhapkhau    luong53    rollback 
     #-- Maker tạo yêu cầu
     [phnhanh] - Maker create request
     #-- Maker nhập dữ liệu hợp lệ
