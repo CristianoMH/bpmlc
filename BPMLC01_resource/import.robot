@@ -22,13 +22,6 @@ Resource    ../BPMLC04_data/data_lcnk.robot
 ###    KEYWORD    ###
 Resource    ../BPMLC05_keyword/keyword_checklist/keyword_flow_phnhanh.robot
 Resource    ../BPMLC05_keyword/keyword_input/keyword_flow_phnhanh.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_01_search.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_02_create.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_03_submit.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_04_rollback.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_05_draft.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_06_cancel.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_07_getDetail.robot
-Resource    ../BPMLC05_keyword/keyword_workflow/keyword_08_pickup.robot
 Resource    ../BPMLC05_keyword/keyword_account.robot
 Resource    ../BPMLC05_keyword/keyword_assert.robot
+Resource    ../BPMLC05_keyword/keyword_workflow.robot

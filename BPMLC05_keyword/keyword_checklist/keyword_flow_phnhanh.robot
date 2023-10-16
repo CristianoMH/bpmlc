@@ -18,3 +18,13 @@ Resource    ../../BPMLC01_resource/import.robot
     Wait Until Element Is Visible    ${a_upload_mxnnnhtt}    20s
     Choose file    ${input_upload_mxnnnhtt}   ${EXECDIR}\\BPMLC04_data\\file_test\\test04.docx
     sleep    2
+
+[phnhanh] - TFO upload file
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Click element    ${btn_next}
+    sleep    1
+
+[phnhanh] - TFS upload file
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Click element    ${btn_next}
+    sleep    1

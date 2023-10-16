@@ -7,6 +7,8 @@ Resource    ../../BPMLC01_resource/import.robot
 ##---------------------------------------- Maker -----------------------------------------------------
 #-- Maker nhập dữ liệu tại màn hình Thông tin nhập liệu
 [phnhanh][Maker][TTNL] - Input data 
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    Wait Until Element Is Visible    ${btn_expand}     120
     [BPM] - Click element    ${btn_expand}
     sleep    1
     [BPM] - Click element    ${tb_currency}
@@ -66,6 +68,7 @@ Resource    ../../BPMLC01_resource/import.robot
 #-- TFO nhập dữ liệu tại màn hình Thông tin nhập liệu
 [phnhanh][TFO][TTNL] - Input data
     [BPM] - Open detail request    ${tray_tfo_dangxuly}    ${requestCode_pType_53}
+    sleep    2
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_expand}
     sleep    3
@@ -97,6 +100,7 @@ Resource    ../../BPMLC01_resource/import.robot
 #-- TFS nhập dữ liệu tại màn hình Thông tin nhập liệu
 [phnhanh][TFS][TTNL] - Input data
     [BPM] - Open detail request    ${tray_tfs_dangxuly}    ${requestCode_pType_53}
+    sleep    2
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_expand}
     sleep    3
