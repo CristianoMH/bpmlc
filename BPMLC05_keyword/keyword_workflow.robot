@@ -60,6 +60,29 @@ Resource    ../BPMLC01_resource/import.robot
 #-- Maker gửi yêu cầu
 [BPM][Maker] - Send request
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Click element    ${tab_checklist}
+    sleep    1
+    [BPM] - Click element    ${btn_send}
+    sleep    1
+    # [BPM] - Input text into textbox    ${textarea_confirm}    Auto Testing
+    # sleep    2
+    [BPM] - Click element    ${btn_submit}
+    sleep    1
+
+#-- Maker gửi lại yêu cầu do TFO/TFS trả về
+[BPM][Maker] - Send back request
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Click element    ${tray_bpm_ops}
+    sleep    1
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Click element    ${tray_bpm_ops_new}
+    sleep    1
+    [BPM] - Open detail request    ${tray_maker_dangxuly}    ${requestCode_pType_53}
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Close rollback pop-up
+    sleep    1
+    [BPM] - Click element    ${tab_checklist}
+    sleep    1
     [BPM] - Click element    ${btn_send}
     sleep    1
     # [BPM] - Input text into textbox    ${textarea_confirm}    Auto Testing
@@ -70,6 +93,27 @@ Resource    ../BPMLC01_resource/import.robot
 #-- TFO/TFS gửi yêu cầu
 [BPM][TFO/TFS] - Send request
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Click element    ${tab_hosoLC}
+    [BPM] - Click element    ${btn_approve}
+    sleep    1
+    [BPM] - Click element    ${btn_accept}
+    sleep    15
+
+#-- Maker gửi lại yêu cầu do TFO/TFS trả về
+[BPM][TFO/TFS] - Send back request
+    [Documentation]    Rollback request
+    [Arguments]     ${locator_tray}    ${request_code}    ${isRollback}
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Click element    ${tray_bpm_ops}
+    sleep    1
+    [BPM] - Wait for element not to appear on page    ${loading_page}    60
+    [BPM] - Click element    ${tray_bpm_ops_new}
+    sleep    1
+    [BPM] - Open detail request    ${locator_tray}    ${request_code}
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    Run Keyword If   '${isRollback}' == ${true}    [BPM] - Close rollback pop-up
+    [BPM] - Click element    ${tab_hosoLC}
+    sleep    1
     [BPM] - Click element    ${btn_approve}
     sleep    1
     [BPM] - Click element    ${btn_accept}
@@ -98,36 +142,15 @@ Resource    ../BPMLC01_resource/import.robot
     sleep    15
 
 #------------------------------------------------------- Rollback -----------------------------------------------------------------#
-#-- TFO gửi trả yêu cầu cho Maker
-[BPM] - TFO rollback request to Maker
-    [BPM] - Wait for element not to appear on page    ${loading_page}    120
-    [BPM] - Click element    ${btn_cancel}
-    sleep    1
-    [BPM] - Click element    ${btn_agree}
-    sleep    1
-
-#-- TFS gửi trả yêu cầu cho Maker
-[BPM] - TFS rollback request to Maker
+#-- Gửi trả yêu cầu
+[BPM] - Rollback request
+    [Documentation]    Rollback request
+    [Arguments]     ${rollbackTo}
     [BPM] - Click element    ${btn_rollback}
     sleep    1
-    [BPM] - Click element    ${droplist_rollbackto}
-    sleep    1
-    [BPM] - Click element    ${data_rollbackto_maker}
-    sleep    1
-    [BPM] - Click element    ${droplist_rollback_reason}
-    sleep    1
-    [BPM] - Click element    ${data_reasonrollback_TTTTKTK}
-    sleep    1
-    [BPM] - Click element    ${btn_close_popup_rollback}
-    sleep    1        
-    [BPM] - Input text into textbox    ${textarea_rollback_content}    ${data_contentrollback}
-    sleep    2
-    [BPM] - Click element    ${btn_dialog_rollback}
-
-#-- TFS gửi trả yêu cầu cho TFO
-[BPM] - TFS rollback request to TFO
-    [BPM] - Click element    ${btn_rollback}
-    sleep    1
+    Run Keyword If   '${rollbackTo}' == ${true}    Run Keywords
+    ...    [BPM] - Click element    ${droplist_rollbackto_tfo}
+    ...    [BPM] - Click element    ${data_rollbackto_maker}
     [BPM] - Click element    ${droplist_rollback_reason}
     sleep    1
     [BPM] - Click element    ${data_reasonrollback_TTTTKTK}
@@ -195,3 +218,9 @@ Resource    ../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${btn_pickup}
     sleep    1
+
+#------------------------------------------------------- Close Rollback Pop-up -----------------------------------------------------------------#
+[BPM] - Close rollback pop-up
+    [Documentation]    Close rollback pop-up
+    [BPM] - Wait for element to appear on page    ${popup_rollback}    120
+    [BPM] - Click element    ${btn_close}

@@ -185,7 +185,7 @@ ${NUMBERS}      1234567890
     [Documentation]    Clear element text using backspace
     ${line_length}     Get Length          ${str_value}
     FOR    ${INDEX}    IN RANGE    1     ${line_length}1
-        press key        ${locator}     \\08
+        press keys        ${locator}     \\08
     END
 
 [BPM] - Clear element text using backspace

@@ -242,14 +242,14 @@ ${NUMBERS}      1234567890
     [Documentation]    Clear element text using backspace
     ${line_length}     Get Length          ${str_value}
     FOR    ${INDEX}    IN RANGE    1     ${line_length}1
-        press key        ${locator}     \\08
+        press keys        ${locator}     \\08
     END
 
 [Common] - Clear element text using backspace
     [Arguments]        ${locator}
     [Documentation]    Clear element text using backspace
     execute javascript      document.evaluate("${locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.select()
-    press key        ${locator}     \\08
+    press keys        ${locator}     \\08
 
 [Common] - Set element text to blank
     [Arguments]  ${locator}
@@ -338,8 +338,8 @@ ${NUMBERS}      1234567890
 	[Arguments]  ${element_xpath}
     ${Reload}=  Run Keyword And Return Status  Page Should Contain Element    ${element_xpath}
     WHILE    ${Reload} != ${TRUE}
-        sleep    4
         RELOAD PAGE
+        Wait Until Element Is Visible    ${element_xpath}    120
         ${Reload}=  Run Keyword And Return Status  Page Should Contain element    ${element_xpath}
     END
 

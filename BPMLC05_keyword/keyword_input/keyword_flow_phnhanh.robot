@@ -9,7 +9,10 @@ Resource    ../../BPMLC01_resource/import.robot
 [phnhanh][Maker][TTNL] - Input data 
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     Wait Until Element Is Visible    ${btn_expand}     120
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_expand}
+    sleep    1
+    Scroll Element Into View    ${tb_marginRate}
     sleep    1
     [BPM] - Click element    ${tb_currency}
     sleep    1
@@ -43,6 +46,8 @@ Resource    ../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${data_depositForm_pttk}
     sleep    1
+    Scroll Element Into View    ${tb_email_lq}
+    sleep    1
     [BPM] - Click element    ${tb_debitAccount}
     sleep    1
     [BPM] - Click element    ${data_debitAccount_no1}
@@ -53,7 +58,6 @@ Resource    ../../BPMLC01_resource/import.robot
     #Get requestCode
     ${requestCode}     get text    ${label_requestcode}
     [BPM] - Set test variable    name=requestCode_pType_53    value=${requestCode}
-    log to console     --------${requestCode_pType_53}
 
 #-- Maker nhập dữ liệu tại màn hình Danh mục hồ sơ
 [phnhanh][Maker][DMHS] - Input data
@@ -73,6 +77,7 @@ Resource    ../../BPMLC01_resource/import.robot
     [BPM] - Click element    ${btn_expand}
     sleep    3
     [BPM] - Wait for element not to appear on page    ${loading_fee}    120
+    Scroll Element Into View    ${tb_swift}
     [BPM] - Input text into textbox    ${tb_swift}    ${data_rma_ABBKVNVX}
     sleep    3
     [BPM] - Click element   ${button_check_rma}    
