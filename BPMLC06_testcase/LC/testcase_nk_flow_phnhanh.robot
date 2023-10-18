@@ -98,7 +98,6 @@ TC2 - Phát hành luồng nhanh chưa phát hành nháp - Flow gửi trả 01
     [BPM] - Logout system
         #-- Maker đăng nhập vào hệ thống
     [BPM] - Login into system    ${data_username_maker}    ${data_password_maker}
-    sleep    1
     #-- Maker mở chi tiết yêu cầu
     [BPM][Maker] - Send back request
     #-- Maker đăng xuất khỏi hệ thống
@@ -107,6 +106,10 @@ TC2 - Phát hành luồng nhanh chưa phát hành nháp - Flow gửi trả 01
     [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
     #-- TFO gửi yêu cầu
     [BPM][TFO/TFS] - Send back request    ${tray_tfo_dangxuly}    ${requestCode_pType_53}    ${false}
+    #-- TFO đăng xuất khỏi hệ thống
+    [BPM] - Logout system
+    #-- Đăng nhập vào hệ thống với role TFS
+    [BPM] - Login into system    ${data_username_tfs}    ${data_password_tfs}
     #-- TFS gửi yêu cầu
     [BPM][TFO/TFS] - Send back request    ${tray_tfs_dangxuly}    ${requestCode_pType_53}    ${true}
     #-- TFS đăng xuất khỏi hệ thống
@@ -117,4 +120,3 @@ TC2 - Phát hành luồng nhanh chưa phát hành nháp - Flow gửi trả 01
     [BPM][TFO] - Close request
     #-- TFO xác nhận đóng yêu cầu
     [BPM] - Verify close request    ${tray_tfo_dahoanthanh}    ${requestCode_pType_53}    Đóng
-
