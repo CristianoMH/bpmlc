@@ -339,8 +339,8 @@ ${NUMBERS}      1234567890
     ${Reload}=  Run Keyword And Return Status  Page Should Contain Element    ${element_xpath}
     WHILE    ${Reload} != ${TRUE}
         RELOAD PAGE
-        Wait Until Element Is Visible    ${element_xpath}    120
         ${Reload}=  Run Keyword And Return Status  Page Should Contain element    ${element_xpath}
+        Wait Until Element Is Visible    ${element_xpath}    120
     END
 
 [Common] - Get page source
