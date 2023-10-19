@@ -6,6 +6,5 @@ ${tb_login_username}    //input[@id='username']
 ${tb_login_password}    //input[@id='txtPassword']
 ${btn_login}    //button[@value='Login']
 
-#--locators của loading page
-${loading_page}    //div[contains(@class,'overlay') and contains(@class,'ng-trigger')]
-${loading_fee}    //app-fee-progress-spinner[@ng-reflect-is-loading='true']
+#-- Link Đăng xuất
+${link_logout}    //a[contains(.,'Đăng xuất')]

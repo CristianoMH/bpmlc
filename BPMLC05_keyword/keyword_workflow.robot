@@ -56,7 +56,6 @@ Resource    ../BPMLC01_resource/import.robot
     sleep    3
 
 #------------------------------------------------------- Submit -----------------------------------------------------------------#
-
 #-- Maker gửi yêu cầu
 [BPM][Maker] - Send request
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
@@ -99,8 +98,8 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Click element    ${btn_accept}
     sleep    15
 
-#-- Maker gửi lại yêu cầu do TFO/TFS trả về
-[BPM][TFO/TFS] - Send back request
+#-- TFO gửi lại yêu cầu do TFS trả về
+[BPM][TFO] - Send back request
     [Documentation]    Rollback request
     [Arguments]     ${locator_tray}    ${request_code}    ${isRollback}
     [BPM] - Wait for element not to appear on page    ${loading_page}    60
@@ -146,9 +145,11 @@ Resource    ../BPMLC01_resource/import.robot
 [BPM] - Rollback request
     [Documentation]    Rollback request
     [Arguments]     ${rollbackTo}
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_rollback}
     sleep    1
-    Run Keyword If   '${rollbackTo}' == ${true}    Run Keywords
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    Run Keyword If   ${rollbackTo} == ${true}    Run Keywords
     ...    [BPM] - Click element    ${droplist_rollbackto_tfo}
     ...    [BPM] - Click element    ${data_rollbackto_maker}
     [BPM] - Click element    ${droplist_rollback_reason}

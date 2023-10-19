@@ -112,3 +112,7 @@ ${col_tfodangxuly_status}    //td//span[@class='badge-status-dang-xu-ly status-b
 ${col_tfsdangxuly_status}    //td//span[@class='badge-status-dang-xu-ly status-badge']
 
 ${col_makerdangxuly_status}    //td//span[@class='badge-status-luu-nhap status-badge']
+
+#--locators của loading page
+${loading_page}    //div[contains(@class,'overlay') and contains(@class,'ng-trigger')]
+${loading_fee}    //app-fee-progress-spinner[@ng-reflect-is-loading='true']

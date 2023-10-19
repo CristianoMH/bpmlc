@@ -16,6 +16,7 @@ Resource    ../BPMLC01_resource/import.robot
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    1
     [Assert] - Verify element should contain text    ${col_dahoanthanh_status}    ${status}
+    sleep    5
 
 #-- Xác nhận hủy yêu cầu thành công
 [BPM] - Verify cancel request
@@ -29,6 +30,7 @@ Resource    ../BPMLC01_resource/import.robot
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    1
     [Assert] - Verify page should not contain element    ${locator_request}
+    sleep    5
 
 #-- Xác nhận lưu nháp yêu cầu thành công
 [BPM] - Verify draft request
@@ -44,6 +46,7 @@ Resource    ../BPMLC01_resource/import.robot
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    1
     [Assert] - Verify element should contain text    ${col_tfodangxuly_status}    ${status}
+    sleep    5
 
 #-- Xác nhận gửi trả yêu cầu thành công
 [BPM] - Verify rollback request
@@ -57,4 +60,6 @@ Resource    ../BPMLC01_resource/import.robot
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    1
     [Assert] - Verify page should contain element    ${locator_request}
+    sleep    5
+
     
