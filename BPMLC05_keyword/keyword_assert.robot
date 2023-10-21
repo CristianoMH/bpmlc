@@ -16,7 +16,7 @@ Resource    ../BPMLC01_resource/import.robot
     Press Keys    ${tb_quicksearch}    ENTER
     sleep    1
     [Assert] - Verify element should contain text    ${col_dahoanthanh_status}    ${status}
-    sleep    5
+    sleep    10
 
 #-- Xác nhận hủy yêu cầu thành công
 [BPM] - Verify cancel request

@@ -82,15 +82,15 @@ ${tb_refLc}    //input[@name='lcGeneralInfoDtoRefNumber']
 
 #-- Nợ chứng từ
 #- Nợ chứng từ của Yêu cầu mở thư tín dụng
-${dpicker_docDebt_1}    //tr[@class='_highlight ng-star-inserted'][1]//input[@name='effectiveDate']
+${dpicker_docDebt_ycmttd}    //tr[./td[contains(text(),'Yêu cầu mở thư tín dụng')]]//input[@name='effectiveDate']
 #- Nợ chứng từ của Hợp đồng/invoice
-${dpicker_docDebt_2}    //tr[@class='_highlight ng-star-inserted'][2]//input[@name='effectiveDate']
+${dpicker_hdi}    //tr[./td[contains(text(),'Hợp đồng/invoice')]]//input[@name='effectiveDate']
 #- Nợ chứng từ của Mail xác nhận nguồn ngân hàng tài trợ
-${dpicker_docDebt_3}    //tr[@class='_highlight ng-star-inserted'][3]//input[@name='effectiveDate']
+${dpicker_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//input[@name='effectiveDate']
 #- Nợ chứng từ của Mail xác nhận nguồn confirm
-${dpicker_docDebt_4}    //tr[@class='ng-star-inserted'][1]//input[@name='effectiveDate']
+${dpicker_docDebt_mxnnc}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//input[@name='effectiveDate']
 #- Nợ chứng từ của Chứng từ khác
-${dpicker_docDebt_5}    //tr[@class='ng-star-inserted'][2]//input[@name='effectiveDate']
+${dpicker_docDebt_ctk}    //tr[./td[contains(text(),'Chứng từ khác')]]//input[@name='effectiveDate']
 
 #-- Upload file
 #- Thẻ input file của Yêu cầu mở thư tín dụng
@@ -106,9 +106,9 @@ ${input_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn 
 #- Thẻ a file của Mail xác nhận nguồn ngân hàng tài trợ
 ${a_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a
 #- Thẻ input file của Mail xác nhận nguồn confirm
-${input_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn ngân hàng tài trợ')]]//a//input
+${input_upload_mxnnc}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a//input
 #- Thẻ a file của Mail xác nhận nguồn confirm
-${a_upload_mxnnnhtt}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a
+${a_upload_mxnnc}    //tr[./td[contains(text(),'Mail xác nhận nguồn confirm')]]//a
 #- Thẻ input file của Chứng từ khác
 ${input_upload_ctk}    //tr[./td[contains(text(),'Chứng từ khác')]]//a//input
 #- Thẻ a file của Chứng từ khác

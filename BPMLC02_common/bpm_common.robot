@@ -7,6 +7,9 @@ ${SPECIAL}      !#%^*()-_
 ${NUMBERS}      1234567890
 
 *** Keywords ***
+[BPM] - Maximize browser size to fit screen
+    Set window position    0    0
+    Set window size        1920    1080
 
 [BPM] - Open Chrome Browser with mode
     [Arguments]     ${url}

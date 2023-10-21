@@ -9,11 +9,9 @@ Resource    ../../BPMLC01_resource/import.robot
 [phnhanh][Maker][TTNL] - Input data 
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     Wait Until Element Is Visible    ${btn_expand}     120
-    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_expand}
     sleep    1
     Scroll Element Into View    ${tb_marginRate}
-    sleep    1
     [BPM] - Click element    ${tb_currency}
     sleep    1
     [BPM] - Click element    ${data_currency_vnd}
@@ -41,7 +39,8 @@ Resource    ../../BPMLC01_resource/import.robot
     [BPM] - Input text into textbox    ${tb_marginRate}    ${data_marginRate}
     sleep    1
     [BPM] - Click element    ${tb_depositAmount}
-    sleep    1 
+    sleep    1
+    Scroll Element Into View    ${droplist_depositForm}
     [BPM] - Click element    ${droplist_depositForm}
     sleep    1
     [BPM] - Click element    ${data_depositForm_pttk}
@@ -51,7 +50,6 @@ Resource    ../../BPMLC01_resource/import.robot
     [BPM] - Click element    ${data_debitAccount_no1}
     sleep    1
     Scroll Element Into View    ${tb_email_lq}
-    sleep    1
     [BPM] - Wait for element not to appear on page    ${loading_fee}    120
     [BPM] - Click element    ${btn_next}
     sleep    1
@@ -61,7 +59,8 @@ Resource    ../../BPMLC01_resource/import.robot
 
 #-- Maker nhập dữ liệu tại màn hình Danh mục hồ sơ
 [phnhanh][Maker][DMHS] - Input data
-    [phnhanh] - Maker upload file to all required checklists
+    # [phnhanh] - Maker upload file to all required checklists
+    [phnhanh] - Maker fill docdebt day to all required checklists
 
 #-- Maker nhập toàn bộ dữ liệu tại các màn hình
 [phnhanh][Maker] - Input data
@@ -74,6 +73,7 @@ Resource    ../../BPMLC01_resource/import.robot
     [BPM] - Open detail request    ${tray_tfo_dangxuly}    ${requestCode_pType_53}
     sleep    2
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    Wait Until Element Is Visible    ${btn_expand}     120
     [BPM] - Click element    ${btn_expand}
     sleep    3
     [BPM] - Wait for element not to appear on page    ${loading_fee}    120
@@ -107,6 +107,7 @@ Resource    ../../BPMLC01_resource/import.robot
     [BPM] - Open detail request    ${tray_tfs_dangxuly}    ${requestCode_pType_53}
     sleep    2
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    Wait Until Element Is Visible    ${btn_expand}     120
     [BPM] - Click element    ${btn_expand}
     sleep    3
     [BPM] - Wait for element not to appear on page    ${loading_page}    120

@@ -19,6 +19,16 @@ Resource    ../../BPMLC01_resource/import.robot
     Choose file    ${input_upload_mxnnnhtt}   ${EXECDIR}\\BPMLC04_data\\file_upload\\test03.docx
     sleep    2
 
+[phnhanh] - Maker fill docdebt day to all required checklists
+    [BPM] - Input text into textbox    ${dpicker_docDebt_ycmttd}        21/10/2025
+    sleep    2
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Input text into textbox    ${dpicker_hdi}        21/10/2025
+    sleep    2
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Input text into textbox    ${dpicker_mxnnnhtt}        21/10/2025
+    sleep    2
+
 [phnhanh] - TFO upload file
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_next}
