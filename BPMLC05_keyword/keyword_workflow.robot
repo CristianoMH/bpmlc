@@ -40,7 +40,6 @@ Resource    ../BPMLC01_resource/import.robot
 [BPM] - Search customer limit following cif code
     [Documentation]    Search customer limit following cif code and select valid limit
     [Arguments]     ${cif}    ${locator_limit}
-    [BPM] - Refresh Page Until Page Contains Element    ${tb_cif}
     [BPM] - Input text into textbox    ${tb_cif}    ${cif}
     sleep    1    
     [BPM] - Click element    ${btn_search_1}
@@ -63,8 +62,6 @@ Resource    ../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${btn_send}
     sleep    1
-    # [BPM] - Input text into textbox    ${textarea_confirm}    Auto Testing
-    # sleep    2
     [BPM] - Click element    ${btn_submit}
     sleep    1
 
@@ -172,22 +169,25 @@ Resource    ../BPMLC01_resource/import.robot
 
 #------------------------------------------------------- Draft -----------------------------------------------------------------#
 #-- Lưu nháp yêu cầu
-[BPM] - Draft request
+[BPM] - Draft request and verify toast notification
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_draft}
-    sleep    1
+    [BPM] - Verify draft request
 
 #------------------------------------------------------- Cancel -----------------------------------------------------------------#
 #-- Hủy yêu cầu
 [BPM] - Cancel request
     [Documentation]    Cancel request
-    [Arguments]     ${locator_tray}    ${request_code}    ${locator_request}
+    [Arguments]     ${locator_tray}    ${request_code}
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_cancel}
     sleep    1
     [BPM] - Click element    ${btn_agree}
     sleep    1
-    [BPM] - Verify cancel request    ${locator_tray}    ${request_code}    ${locator_request}
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    [BPM] - Click element    ${tray_extension}
+    sleep    1    
+    [BPM] - Verify cancel request    ${locator_tray}    ${request_code}
     sleep    2
 
 #------------------------------------------------------- getDetail -----------------------------------------------------------------#

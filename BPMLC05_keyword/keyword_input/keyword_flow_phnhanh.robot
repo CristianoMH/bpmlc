@@ -59,9 +59,8 @@ Resource    ../../BPMLC01_resource/import.robot
 
 #-- Maker nhập dữ liệu tại màn hình Danh mục hồ sơ
 [phnhanh][Maker][DMHS] - Input data
-    # [phnhanh] - Maker upload file to all required checklists
-    [phnhanh] - Maker fill docdebt day to all required checklists
-
+    [phnhanh] - Maker upload file to all required checklists
+    
 #-- Maker nhập toàn bộ dữ liệu tại các màn hình
 [phnhanh][Maker] - Input data
     [phnhanh][Maker][TTNL] - Input data

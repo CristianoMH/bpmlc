@@ -4,7 +4,7 @@ Resource         ../../BPMLC01_resource/import.robot
 
 #-- Mở trình duyệt chrome và đăng nhập vào hệ thống BPM với role Maker
 Test Setup    [BPM] - Open browser and login to system with role Maker
-# Test Teardown    [BPM] - Close Browser
+Test Teardown    [BPM] - Close Browser
 
 ### --- Tất cả các test case của luồng phát hành luồng nhanh chưa phát hành nháp
 *** Test Cases ***
@@ -193,36 +193,8 @@ TC4 - Phát hành luồng nhanh chưa phát hành nháp - Maker lưu nháp yêu 
     [BPM] - Create new request
     #-- Maker nhập toàn bộ dữ liệu tại các màn hình
     [phnhanh][Maker] - Input data
-    #-- Maker lưu nháp yêu cầu
-    [BPM] - Draft request
-    #-- Maker gửi yêu cầu
-    [BPM][Maker] - Send request
-    #-- Maker đăng xuất khỏi hệ thống
-    [BPM] - Logout system
-    #-- Đăng nhập vào hệ thống với role TFO
-    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
-    #-- Mở khay TFO chờ xử lý và tìm kiếm hồ sơ
-    [BPM] - Pick up request    ${tray_tfo_choxuly}    ${requestCode_pType_53}    
-    #-- TFO nhập toàn bộ dữ liệu tại các màn hình
-    [phnhanh][TFO] - Input data
-    #-- TFO gửi yêu cầu
-    [BPM][TFO/TFS] - Send request
-    #-- TFO đăng xuất khỏi hệ thống
-    [BPM] - Logout system
-    #-- Đăng nhập vào hệ thống với role TFS
-    [BPM] - Login into system        ${data_username_tfs}    ${data_password_tfs}
-    #-- Mở khay TFS chờ xử lý và tìm kiếm hồ sơ
-    [BPM] - Pick up request    ${tray_tfs_choxuly}    ${requestCode_pType_53}
-    #-- TFS nhập toàn bộ dữ liệu tại các màn hình
-    [phnhanh][TFS] - Input data
-    #-- TFS gửi yêu cầu
-    [BPM][TFO/TFS] - Send request
-    #-- TFS đăng xuất khỏi hệ thống
-    [BPM] - Logout system
-    #-- Đăng nhập vào hệ thống với role TFO
-    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
-    #-- TFO đóng yêu cầu và đóng yêu cầu
-    [BPM][TFO] - Close request    ${tray_tfo_dahoanthanh}    ${requestCode_pType_53}
+    #-- Maker lưu nháp yêu cầu và verify toast thông báo thành công
+    [BPM] - Draft request and verify toast notification
 
 TC5 - Phát hành luồng nhanh chưa phát hành nháp - TFO lưu nháp yêu cầu
     [Tags]    lc    nhapkhau    luong53    close
@@ -244,26 +216,8 @@ TC5 - Phát hành luồng nhanh chưa phát hành nháp - TFO lưu nháp yêu c�
     [BPM] - Pick up request    ${tray_tfo_choxuly}    ${requestCode_pType_53}    
     #-- TFO nhập toàn bộ dữ liệu tại các màn hình
     [phnhanh][TFO] - Input data
-    #-- TFO lưu nháp yêu cầu
-    [BPM] - Draft request
-    #-- TFO gửi yêu cầu
-    [BPM][TFO/TFS] - Send request
-    #-- TFO đăng xuất khỏi hệ thống
-    [BPM] - Logout system
-    #-- Đăng nhập vào hệ thống với role TFS
-    [BPM] - Login into system        ${data_username_tfs}    ${data_password_tfs}
-    #-- Mở khay TFS chờ xử lý và tìm kiếm hồ sơ
-    [BPM] - Pick up request    ${tray_tfs_choxuly}    ${requestCode_pType_53}
-    #-- TFS nhập toàn bộ dữ liệu tại các màn hình
-    [phnhanh][TFS] - Input data
-    #-- TFS gửi yêu cầu
-    [BPM][TFO/TFS] - Send request
-    #-- TFS đăng xuất khỏi hệ thống
-    [BPM] - Logout system
-    #-- Đăng nhập vào hệ thống với role TFO
-    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
-    #-- TFO đóng yêu cầu và đóng yêu cầu
-    [BPM][TFO] - Close request    ${tray_tfo_dahoanthanh}    ${requestCode_pType_53}
+    #-- TFO lưu nháp yêu cầu và verify toast thông báo thành công
+    [BPM] - Draft request and verify toast notification
 
 TC6 - Phát hành luồng nhanh chưa phát hành nháp - TFS lưu nháp yêu cầu
     [Tags]    lc    nhapkhau    luong53    close
@@ -295,16 +249,8 @@ TC6 - Phát hành luồng nhanh chưa phát hành nháp - TFS lưu nháp yêu c�
     [BPM] - Pick up request    ${tray_tfs_choxuly}    ${requestCode_pType_53}
     #-- TFS nhập toàn bộ dữ liệu tại các màn hình
     [phnhanh][TFS] - Input data
-    #-- TFS lưu nháp yêu cầu
-    [BPM] - Draft request
-    #-- TFS gửi yêu cầu
-    [BPM][TFO/TFS] - Send request
-    #-- TFS đăng xuất khỏi hệ thống
-    [BPM] - Logout system
-    #-- Đăng nhập vào hệ thống với role TFO
-    [BPM] - Login into system    ${data_username_tfo}    ${data_password_tfo}
-    #-- TFO đóng yêu cầu và đóng yêu cầu
-    [BPM][TFO] - Close request    ${tray_tfo_dahoanthanh}    ${requestCode_pType_53}
+    #-- TFS lưu nháp yêu cầu và verify toast thông báo thành công
+    [BPM] - Draft request and verify toast notification
 
 TC7 - Phát hành luồng nhanh chưa phát hành nháp - Maker hủy yêu cầu
     [Tags]    lc    nhapkhau    luong53    close
@@ -317,4 +263,4 @@ TC7 - Phát hành luồng nhanh chưa phát hành nháp - Maker hủy yêu cầu
     #-- Maker nhập toàn bộ dữ liệu tại các màn hình
     [phnhanh][Maker] - Input data
     #-- Maker hủy yêu cầu
-    [BPM] - Cancel request    ${tray_maker_dangxuly}    ${requestCode_pType_53}    ${col_bpmid}
+    [BPM] - Cancel request    ${tray_search_request}    ${requestCode_pType_53}

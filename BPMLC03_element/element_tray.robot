@@ -18,6 +18,12 @@ ${link_logout}    //a[contains(.,'Đăng xuất')]
 #-- Khay ông Vận hành
 ${tray_bpm_ops}    //a[@class='nav-link nav-dropdown-toggle' and not(contains(.,'BPM Vận hành (NEW)')) and contains(.,'Vận hành')]
 
+#-- Khay cha Tiện ích BPM
+${tray_extension}    //a[contains(.,'Tiện ích BPM')]
+
+#-- Khay con Tìm kiếm hồ sơ
+${tray_search_request}    //app-sidebar-nav-link//a[contains(.,'Tìm kiếm hồ sơ')] 
+
 #-- Khay cha BPM vận hành (NEW)
 ${tray_bpm_ops_new}    //a[contains(.,'BPM Vận hành (NEW)')]    
 
@@ -112,6 +118,8 @@ ${col_tfodangxuly_status}    //td//span[@class='badge-status-dang-xu-ly status-b
 ${col_tfsdangxuly_status}    //td//span[@class='badge-status-dang-xu-ly status-badge']
 
 ${col_makerdangxuly_status}    //td//span[@class='badge-status-luu-nhap status-badge']
+
+${col_huy_status}        //td//span[@class='badge-status-huy status-badge']
 
 #--locators của loading page
 ${loading_page}    //div[contains(@class,'overlay') and contains(@class,'ng-trigger')]
