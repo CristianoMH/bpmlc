@@ -4,7 +4,7 @@ Resource         ../../BPMLC01_resource/import.robot
 
 #-- Mở trình duyệt chrome và đăng nhập vào hệ thống BPM với role Maker
 Test Setup    [BPM] - Open browser and login to system with role Maker
-# Test Teardown    [BPM] - Close Browser
+Test Teardown    [BPM] - Close Browser
 
 ### --- Tất cả các test case của luồng phát hành luồng nhanh chưa phát hành nháp
 *** Test Cases ***

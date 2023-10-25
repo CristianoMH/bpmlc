@@ -339,6 +339,7 @@ ${NUMBERS}      1234567890
     ${Reload}=  Run Keyword And Return Status  Page Should Contain Element    ${element_xpath}
     WHILE    ${Reload} != ${TRUE}
         RELOAD PAGE
+        sleep    5
         ${Reload}=  Run Keyword And Return Status  Page Should Contain element    ${element_xpath}
     END
 
