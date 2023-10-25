@@ -31,6 +31,8 @@ ${data_lcExpirationLocation_argentina}    //li[contains(.,'ARGENTINA')]
 ${data_depositForm_pttk}    //span[contains(.,'Phong tỏa tài khoản thanh toán')]            
 #-- Tài khoản ghi nợ
 ${data_debitAccount_no1}    //p-dropdownitem[1]//li[@role='option']
+#-- Option Không thu phí
+${data_debitacount_nocharges}    //p-radiobutton[@inputid='noCharges']
 #-- Thông tin RMA
 ${data_rma_ABBKVNVX}    ABBKVNVX
 #-- Lý do gửi trả

@@ -45,6 +45,10 @@ Resource    ../../BPMLC01_resource/import.robot
     sleep    1
     [BPM] - Click element    ${data_depositForm_pttk}
     sleep    1
+    # Scroll Element Into View    ${droplist_depositForm}
+    # sleep    1
+    # [BPM] - Click element    ${data_debitacount_nocharges}
+    # sleep    2
     [BPM] - Click element    ${tb_debitAccount}
     sleep    1
     [BPM] - Click element    ${data_debitAccount_no1}

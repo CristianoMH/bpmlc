@@ -86,6 +86,7 @@ Resource    ../BPMLC01_resource/import.robot
     [BPM] - Open detail request    ${locator_tray}    ${request_code}
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     Wait Until Element Is Visible    ${btn_expand}     120
+    [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_expand}
     sleep    3
     [BPM] - Click element    ${btn_next}

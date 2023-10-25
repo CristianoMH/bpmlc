@@ -340,7 +340,6 @@ ${NUMBERS}      1234567890
     WHILE    ${Reload} != ${TRUE}
         RELOAD PAGE
         ${Reload}=  Run Keyword And Return Status  Page Should Contain element    ${element_xpath}
-        Wait Until Element Is Visible    ${element_xpath}    120
     END
 
 [Common] - Get page source
