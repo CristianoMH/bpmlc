@@ -36,7 +36,6 @@ Resource    ../BPMLC01_resource/import.robot
 [BPM] - Verify draft request
     [Documentation]    Search request by request code and verify status of request display on screen
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
-    [BPM] - Wait for element to appear on page    ${div_alert}
     [Assert] - Verify element should contain text    ${div_alert}    Cập nhật dữ liệu thành công!
     sleep    10
 

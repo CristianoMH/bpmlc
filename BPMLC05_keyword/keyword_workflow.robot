@@ -173,6 +173,7 @@ Resource    ../BPMLC01_resource/import.robot
 [BPM] - Draft request and verify toast notification
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
     [BPM] - Click element    ${btn_draft}
+    sleep    2
     [BPM] - Verify draft request
 
 #------------------------------------------------------- Cancel -----------------------------------------------------------------#
