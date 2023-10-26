@@ -54,6 +54,7 @@ Resource    ../../BPMLC01_resource/import.robot
     # [BPM] - Click element    ${data_debitAccount_no1}
     # sleep    1
     Scroll Element Into View    ${tb_email_lq}
+    sleep   2
     [BPM] - Wait for element not to appear on page    ${loading_fee}    120
     [BPM] - Click element    ${btn_next}
     sleep    1
