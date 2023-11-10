@@ -17,7 +17,7 @@ Resource    ../BPMLC01_resource/import.robot
 [BPM] - Login into system
     [Documentation]    Login to BPM system with username and password
     [Arguments]     ${username}    ${password}
-    [Common] - Refresh Page Until Page Contains Element    ${tb_login_username}
+    # [Common] - Refresh Page Until Page Contains Element    ${tb_login_username}
     [BPM] - Wait for element to appear on page    ${tb_login_username}
     [BPM] - Click element    ${tb_login_username}
     [BPM] - Input text into textbox    ${tb_login_username}    ${username}

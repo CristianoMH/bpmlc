@@ -8,6 +8,7 @@ Resource    ../../BPMLC01_resource/import.robot
 #-- Maker nhập dữ liệu tại màn hình Thông tin nhập liệu
 [phnhanh][Maker][TTNL] - Input data 
     [BPM] - Wait for element not to appear on page    ${loading_page}    120
+    sleep    2
     Wait Until Element Is Visible    ${btn_expand}     120
     [BPM] - Click element    ${btn_expand}
     sleep    1
